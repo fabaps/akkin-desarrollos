@@ -87,8 +87,8 @@ export function GdrsHero() {
           >
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src="/images/gdrs-guatemala-hero.png"
-                alt="GDRs Guatemala - Parques Solares en paisaje montañoso"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0266%20%281%29.jpg-qUQb3oLlzzxQAZjJtRCiSZQGqnYEnO.jpeg"
+                alt="Equipo de ingenieros del proyecto GDRs Guatemala entre filas de paneles solares"
                 width={800}
                 height={600}
                 className="object-cover w-full h-full"

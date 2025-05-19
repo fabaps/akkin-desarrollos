@@ -11,6 +11,22 @@ import { useI18n } from "@/lib/i18n-context"
 
 const projectImages = [
   {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0253.jpg-bsaYiaPs14ppbI8WQSE1sMPsZ4a5kh.jpeg",
+    alt: "Vista aérea del Parque Solar Jutiapa mostrando la instalación completa de paneles solares",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0259.jpg-u2Zwf6ZELJ34HLV3hzQrEpzNlXAm5T.jpeg",
+    alt: "Vista aérea del Parque Solar Jutiapa desde otro ángulo mostrando los paneles y campos agrícolas circundantes",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0262.jpg-LTXWy1vq6lsK7mfxDBgnvHuP7Aaq2X.jpeg",
+    alt: "Vista aérea del Parque Solar Jutiapa mostrando paneles instalados y estructuras de montaje en preparación",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0266%20%281%29.jpg-uL3MVsjjoy108XzODNyv32fJzyzNNG.jpeg",
+    alt: "Equipo de ingenieros e instaladores del Parque Solar Jutiapa posando entre filas de paneles solares",
+  },
+  {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-03-05%20at%2010.21.42%20AM-FEMzOTvnRC2ZbVOmchyuYO79mVTQd9.jpeg",
     alt: "Instalación de postes de soporte en el Parque Solar Jutiapa",
   },
