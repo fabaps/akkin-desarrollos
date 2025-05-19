@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { motion } from "framer-motion"
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react"
+import { Linkedin, Mail, MapPin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
@@ -14,7 +14,7 @@ export function SiteFooter() {
 
   return (
     <footer className="relative overflow-hidden">
-      {/* Decorative Elements permanecen igual */}
+      {/* Decorative Elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_-20%,black,transparent)]" />
         <motion.div
@@ -36,7 +36,7 @@ export function SiteFooter() {
 
       {/* Main Content */}
       <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
@@ -77,26 +77,6 @@ export function SiteFooter() {
               >
                 <Linkedin className="h-5 w-5 text-oxford-300 group-hover:text-solar-400" />
               </motion.a>
-              <motion.a
-                href="https://www.instagram.com/academiadeproyectos/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-oxford-700/50 hover:bg-oxford-600/50 transition-colors group"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Instagram className="h-5 w-5 text-oxford-300 group-hover:text-solar-400" />
-              </motion.a>
-              <motion.a
-                href="https://www.facebook.com/academiayproyectos/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-oxford-700/50 hover:bg-oxford-600/50 transition-colors group"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Facebook className="h-5 w-5 text-oxford-300 group-hover:text-solar-400" />
-              </motion.a>
             </div>
           </div>
 
@@ -123,14 +103,13 @@ export function SiteFooter() {
                     }
                   },
                 },
-                { text: t("nav.contact"), href: "/contacto", isButton: true },
               ].map((link, index) => (
                 <motion.li key={index} whileHover={{ x: 5 }} className="transform transition-transform duration-200">
                   {link.isButton ? (
                     <Link href={link.href}>
                       <Button
                         className="group relative px-6 py-2 bg-gradient-to-r from-solar-500 to-solar-600 backdrop-blur-sm rounded-full overflow-hidden 
-         border border-solar-400/50 hover:border-solar-400 transition-all duration-300 w-full"
+                        border border-solar-400/50 hover:border-solar-400 transition-all duration-300 w-full"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-solar-600 to-solar-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <span className="relative text-white">{link.text}</span>
@@ -183,27 +162,18 @@ export function SiteFooter() {
                   admin@adepenlinea.com
                 </a>
               </motion.li>
+              <motion.li whileHover={{ x: 5 }} className="pt-4">
+                <Link href="/contacto">
+                  <Button
+                    className="group relative px-6 py-2 bg-gradient-to-r from-solar-500 to-solar-600 backdrop-blur-sm rounded-full overflow-hidden 
+                    border border-solar-400/50 hover:border-solar-400 transition-all duration-300"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-solar-600 to-solar-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="relative text-white">{t("nav.contact")}</span>
+                  </Button>
+                </Link>
+              </motion.li>
             </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h4 className="text-lg font-semibold text-oxford-100 mb-6">{t("footer.newsletter")}</h4>
-            <p className="text-oxford-300 mb-4">{t("footer.newsletterDesc")}</p>
-            <form className="space-y-3">
-              <input
-                type="email"
-                placeholder={t("footer.emailPlaceholder")}
-                className="w-full px-4 py-2 rounded-lg bg-oxford-700/50 border border-oxford-600/50 focus:border-oxford-400/50 focus:outline-none focus:ring-1 focus:ring-oxford-400/50 placeholder-oxford-400 text-oxford-100"
-              />
-              <Button
-                className="w-full bg-gradient-to-r from-solar-500 to-solar-600 backdrop-blur-sm rounded-full overflow-hidden 
-         border border-solar-400/50 hover:border-solar-400 transition-all duration-300 group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-solar-600 to-solar-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative text-white">{t("footer.subscribe")}</span>
-              </Button>
-            </form>
           </div>
         </div>
 

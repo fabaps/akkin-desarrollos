@@ -389,8 +389,8 @@ const translations: TranslationsType = {
     en: "Financial design of the park.",
   },
   "preProyectos.hero.cta": {
-    es: "Solicitar consulta",
-    en: "Request consultation",
+    es: "Contáctanos",
+    en: "Contact us",
   },
 
   // Contenido de la página de Diseño y Permisología
@@ -581,8 +581,8 @@ const translations: TranslationsType = {
     en: "Ready to start your solar project?",
   },
   "preProyectos.cta.button": {
-    es: "Contactar ahora",
-    en: "Contact now",
+    es: "Contáctanos",
+    en: "Contact us",
   },
 
   // Página de Instalación y Logística
@@ -599,8 +599,8 @@ const translations: TranslationsType = {
     en: "We have a highly qualified team for the physical implementation of the solar park, ensuring efficiency and precision in each phase of the assembly.",
   },
   "instalacion.hero.cta": {
-    es: "Solicitar consulta",
-    en: "Request consultation",
+    es: "Contáctanos",
+    en: "Contact us",
   },
 
   // Contenido de la página de Instalación y Logística
@@ -673,8 +673,8 @@ const translations: TranslationsType = {
     en: "Ready to start your solar project?",
   },
   "instalacion.cta.button": {
-    es: "Contactar ahora",
-    en: "Contact now",
+    es: "Contáctanos",
+    en: "Contact us",
   },
 
   // Página de Gestión de Licencias
@@ -691,8 +691,8 @@ const translations: TranslationsType = {
     en: "Complete certification and authorization process for the interconnection of the solar park to the electrical grid, ensuring compliance with legal and regulatory requirements.",
   },
   "licencias.hero.cta": {
-    es: "Solicitar consulta",
-    en: "Request consultation",
+    es: "Contáctanos",
+    en: "Contact us",
   },
 
   // Contenido de la página de Gestión de Licencias
@@ -725,8 +725,8 @@ const translations: TranslationsType = {
     en: "Ready to start your solar project?",
   },
   "licencias.cta.button": {
-    es: "Contactar ahora",
-    en: "Contact now",
+    es: "Contáctanos",
+    en: "Contact us",
   },
 
   // Página de Contacto
