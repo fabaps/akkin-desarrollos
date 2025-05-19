@@ -19,7 +19,7 @@ const nextConfig = {
   // Configuración para resolver problemas de dependencias
   experimental: {
     esmExternals: 'loose',
-    optimizeCss: true, // Optimizar CSS
+    optimizeCss: false, // Changed from true to false
     scrollRestoration: true, // Mejorar la restauración del scroll
   },
   // Ignorar errores durante el build
