@@ -27,18 +27,6 @@ const projectImages = [
     alt: "Equipo de ingenieros e instaladores del Parque Solar Jutiapa posando entre filas de paneles solares",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-03-05%20at%2010.21.42%20AM-FEMzOTvnRC2ZbVOmchyuYO79mVTQd9.jpeg",
-    alt: "Instalación de postes de soporte en el Parque Solar Jutiapa",
-  },
-  {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-03-05%20at%2010.21.49%20AM%20%281%29-6loYt4ZsdIUt3PW1zQI1pCshAJmBFW.jpeg",
-    alt: "Operador realizando trabajo de hincado en el proyecto",
-  },
-  {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-1152955763-612x612.jpg-ucnzbHNx9ESdyc9aCAdWsLdAXqtEou.jpeg",
-    alt: "Vista aérea de la instalación de paneles solares en el parque",
-  },
-  {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-03-05%20at%2010.21.49%20AM%20%281%29-BcKtXJZkIcNLMmEGFNfZu4Nt50VFJb.jpeg",
     alt: "Operador en maquinaria de hincado instalando soportes para el parque solar",
   },
