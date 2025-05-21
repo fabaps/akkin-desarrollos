@@ -5,7 +5,6 @@ import { motion, useTransform, useMotionValue, useSpring } from "framer-motion"
 import { useRef } from "react"
 import { useInView } from "framer-motion"
 import { CheckCircle } from "lucide-react"
-import { ServicesBackground } from "@/components/services-background"
 import { useI18n } from "@/lib/i18n-context"
 
 export function HeroGrid() {
@@ -38,13 +37,27 @@ export function HeroGrid() {
       onMouseMove={handleMouseMove}
       className="relative min-h-screen w-full overflow-hidden bg-oxford-800"
     >
-      {/* Services Background */}
-      <div className="absolute inset-0">
-        <ServicesBackground />
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="relative w-full h-full">
+          <iframe
+            className="absolute w-full h-full object-cover"
+            src="https://www.youtube.com/embed/TizT1td5Y0E?autoplay=1&mute=1&loop=1&playlist=TizT1td5Y0E&rel=0&controls=0&showinfo=0&modestbranding=1"
+            title="ADEP INGENIERÍA"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            allowFullScreen
+            loading="lazy"
+          ></iframe>
+
+          {/* Overlay gradient para mejorar legibilidad */}
+          <div className="absolute inset-0 bg-gradient-to-r from-oxford-900/90 via-oxford-900/70 to-oxford-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-oxford-900/90 via-oxford-900/60 to-oxford-900/40"></div>
+        </div>
       </div>
 
       {/* Floating particles */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-10">
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
@@ -66,20 +79,20 @@ export function HeroGrid() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 h-screen flex flex-col justify-center">
         {/* Espaciado para el header fijo */}
         <div className="h-16" />
 
-        {/* Estructura principal */}
-        <div className="flex flex-col py-2 md:py-12 min-h-[calc(100vh-4rem)] space-y-3 md:space-y-8">
-          {/* Título para móvil (arriba del video) */}
+        {/* Contenido principal centrado verticalmente */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+          {/* Título principal */}
           <motion.div
-            className="w-full relative mb-3 md:hidden"
+            className="w-full md:w-1/2 relative"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.3 }}
           >
-            <div className="relative p-4 rounded-xl bg-oxford-800/40 backdrop-blur-[2px] border border-oxford-700/20">
+            <div className="relative p-4 md:p-6 rounded-xl bg-oxford-800/40 backdrop-blur-[2px] border border-oxford-700/20">
               <motion.div
                 className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-solar-400 to-solar-600"
                 initial={{ scaleY: 0 }}
@@ -87,7 +100,7 @@ export function HeroGrid() {
                 transition={{ duration: 0.5 }}
               />
               <motion.h1
-                className="text-3xl font-bold text-white leading-tight pl-4"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight pl-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
@@ -112,7 +125,7 @@ export function HeroGrid() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 }}
-                  className="block text-xl text-gray-300 mt-2"
+                  className="block text-2xl md:text-3xl lg:text-4xl text-gray-300 mt-4"
                 >
                   {t("hero.subtitle")}
                 </motion.span>
@@ -120,89 +133,9 @@ export function HeroGrid() {
             </div>
           </motion.div>
 
-          {/* Video */}
-          <motion.div
-            className="w-full relative group"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.4 }}
-          >
-            <div className="relative overflow-hidden rounded-2xl bg-oxford-700/50 backdrop-blur-sm border border-oxford-500/20 hover:border-oxford-400/30 transition-all duration-300 h-full">
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-oxford-600/20 to-oxford-500/20"
-                style={{
-                  x: xBg,
-                  y: yBg,
-                }}
-              />
-              <div className="relative aspect-[16/9] md:aspect-[16/9] overflow-hidden rounded-2xl h-full">
-                <iframe
-                  className="w-full h-full object-cover cursor-pointer"
-                  src="https://www.youtube.com/embed/TizT1td5Y0E?autoplay=1&mute=1&loop=1&playlist=TizT1td5Y0E&rel=0&controls=0&showinfo=0&modestbranding=1"
-                  title="ADEP INGENIERÍA"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                  allowFullScreen
-                  loading="lazy"
-                  onClick={(e) => {
-                    window.open("https://youtu.be/TizT1td5Y0E", "_blank")
-                    e.preventDefault()
-                  }}
-                ></iframe>
-
-                {/* Título superpuesto SOLO en tablet y desktop */}
-                <div className="absolute top-8 left-8 max-w-2xl pointer-events-none hidden md:block">
-                  <div className="relative">
-                    <div className="p-6 rounded-xl bg-oxford-800/40 backdrop-blur-[2px] border border-oxford-700/20">
-                      <motion.div
-                        className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-solar-400 to-solar-600"
-                        initial={{ scaleY: 0 }}
-                        animate={{ scaleY: 1 }}
-                        transition={{ duration: 0.5 }}
-                      />
-                      <motion.h1
-                        className="text-5xl lg:text-6xl font-bold text-white leading-tight pl-4"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1 }}
-                      >
-                        <motion.span
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.2 }}
-                          className="block"
-                        >
-                          {t("hero.title1")}
-                        </motion.span>
-                        <motion.span
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.4 }}
-                          className="block bg-gradient-to-r from-white to-gray-300 text-transparent bg-clip-text"
-                        >
-                          {t("hero.title2")}
-                        </motion.span>
-                        <motion.span
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.8 }}
-                          className="block text-3xl lg:text-4xl text-gray-300 mt-2"
-                        >
-                          {t("hero.subtitle")}
-                        </motion.span>
-                      </motion.h1>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Elementos decorativos */}
-            <div className="absolute -inset-px bg-gradient-to-r from-oxford-400/20 to-oxford-300/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity -z-10" />
-          </motion.div>
-
           {/* Sección de certificaciones */}
           <motion.div
-            className="w-full relative mt-4 md:mt-8"
+            className="w-full md:w-1/2 relative mt-4 md:mt-0"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.5 }}
@@ -239,7 +172,7 @@ export function HeroGrid() {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-oxford-800 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-oxford-800 to-transparent z-10" />
     </div>
   )
 }
