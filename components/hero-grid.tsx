@@ -41,7 +41,7 @@ export function HeroGrid() {
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
           <iframe
-            className="absolute w-full h-full object-cover scale-105"
+            className="absolute w-full h-full object-cover scale-110"
             src="https://www.youtube.com/embed/TizT1td5Y0E?autoplay=1&mute=1&loop=1&playlist=TizT1td5Y0E&rel=0&controls=0&showinfo=0&modestbranding=1"
             title="ADEP INGENIERÍA"
             frameBorder="0"
@@ -51,8 +51,8 @@ export function HeroGrid() {
           ></iframe>
 
           {/* Overlay gradient para mejorar legibilidad */}
-          <div className="absolute inset-0 bg-gradient-to-r from-oxford-900/70 via-oxford-900/40 to-oxford-900/50"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-oxford-900/70 via-oxford-900/30 to-oxford-900/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-oxford-900/40 via-oxford-900/10 to-oxford-900/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-oxford-900/50 via-oxford-900/10 to-transparent"></div>
         </div>
       </div>
 
@@ -92,7 +92,7 @@ export function HeroGrid() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.3 }}
           >
-            <div className="relative p-4 md:p-6 rounded-xl bg-oxford-800/30 backdrop-blur-[2px] border border-oxford-700/20">
+            <div className="relative p-4 md:p-6 rounded-xl bg-oxford-900/20 backdrop-blur-[3px] border border-oxford-700/20">
               <motion.div
                 className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-solar-400 to-solar-600"
                 initial={{ scaleY: 0 }}
@@ -109,7 +109,7 @@ export function HeroGrid() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="block"
+                  className="block text-white drop-shadow-md"
                 >
                   {t("hero.title1")}
                 </motion.span>
@@ -117,7 +117,7 @@ export function HeroGrid() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="block bg-gradient-to-r from-white to-gray-300 text-transparent bg-clip-text"
+                  className="block bg-gradient-to-r from-white to-gray-200 text-transparent bg-clip-text drop-shadow-md"
                 >
                   {t("hero.title2")}
                 </motion.span>
@@ -125,7 +125,7 @@ export function HeroGrid() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 }}
-                  className="block text-2xl md:text-3xl lg:text-4xl text-gray-300 mt-4"
+                  className="block text-2xl md:text-3xl lg:text-4xl text-white drop-shadow-md mt-4"
                 >
                   {t("hero.subtitle")}
                 </motion.span>
@@ -140,7 +140,7 @@ export function HeroGrid() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.5 }}
           >
-            <div className="relative overflow-hidden rounded-2xl bg-oxford-700/50 backdrop-blur-sm border border-oxford-500/20 hover:border-oxford-400/30 transition-all duration-300 p-4 md:p-6">
+            <div className="relative overflow-hidden rounded-2xl bg-oxford-900/30 backdrop-blur-[3px] border border-oxford-500/20 hover:border-oxford-400/30 transition-all duration-300 p-4 md:p-6">
               <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
                 {/* Título de normativos */}
                 <div className="md:w-1/3">
