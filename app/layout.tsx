@@ -39,10 +39,12 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "AKKIN - Desarrollo de Parques Solares a Gran Escala",
+        type: "image/jpeg",
       },
     ],
     locale: "es_ES",
     type: "website",
+    siteName: "AKKIN",
   },
   // Twitter Card
   twitter: {
@@ -62,6 +64,13 @@ export const metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  // Metadatos específicos para WhatsApp
+  other: {
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:type": "image/jpeg",
+    "og:image:alt": "AKKIN - Desarrollo de Parques Solares a Gran Escala",
   },
     generator: 'v0.dev'
 }
