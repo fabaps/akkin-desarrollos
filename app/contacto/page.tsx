@@ -1,72 +1,30 @@
-import { ContactForm } from "@/components/contact-form"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
-import { ServicesBackground } from "@/components/services-background"
+// Actualizar los metadatos para usar la imagen del parque solar
 
-// Modificar el title, description, keywords y los metadatos de Open Graph y Twitter
 export const metadata = {
-  title: "Contacto | AKKIN - Desarrollo de Parques Solares Guatemala",
+  title: "Contacto - AKKIN Parques Solares Guatemala",
   description:
-    "Contáctanos para desarrollar e instalar tu parque solar Guatemala a gran escala. Especialistas en proyectos GDRs Guatemala y EPC solar Guatemala en Guatemala, El Salvador y Honduras.",
-  keywords:
-    "contacto parques solares Guatemala, instalación solar Guatemala, desarrollo GDRs Guatemala, EPC solar Guatemala",
-  // Open Graph
+    "Contáctanos para desarrollar tu proyecto de parque solar en Guatemala. Especialistas en GDRs Guatemala, EPC solar y energía renovable.",
   openGraph: {
-    title: "Contacto | AKKIN - Desarrollo de Parques Solares Guatemala",
+    title: "Contacto - AKKIN Parques Solares Guatemala",
     description:
-      "Contáctanos para desarrollar e instalar tu parque solar Guatemala a gran escala en Guatemala, El Salvador y Honduras.",
+      "Contáctanos para desarrollar tu proyecto de parque solar en Guatemala. Especialistas en GDRs Guatemala, EPC solar y energía renovable.",
     images: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Centro%20Tecnol%C3%B3gico_edited-gtmuhJVDTt1BK3DNJ734xefWVsftTA.png",
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0266%20%281%29.JPG-xh1cVAPlLGHqYmBWpSwHRVxDIkK8vA.jpeg",
         width: 1200,
         height: 630,
-        alt: "AKKIN - Contacto Parques Solares Guatemala",
+        alt: "AKKIN - Desarrollo de Parques Solares a Gran Escala",
+        type: "image/jpeg",
       },
     ],
-    locale: "es_ES",
     type: "website",
   },
-  // Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "Contacto | AKKIN - Desarrollo de Parques Solares Guatemala",
-    description: "Contáctanos para desarrollar e instalar tu parque solar Guatemala a gran escala",
+    title: "Contacto - AKKIN Parques Solares Guatemala",
+    description: "Contáctanos para desarrollar tu proyecto de parque solar en Guatemala.",
     images: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Centro%20Tecnol%C3%B3gico_edited-gtmuhJVDTt1BK3DNJ734xefWVsftTA.png",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0266%20%281%29.JPG-xh1cVAPlLGHqYmBWpSwHRVxDIkK8vA.jpeg",
     ],
   },
-  // Robots
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-}
-
-export default function ContactPage() {
-  return (
-    <div className="min-h-screen bg-oxford-800">
-      {/* Fondo global */}
-      <div className="fixed inset-0">
-        <ServicesBackground />
-      </div>
-
-      <div className="relative">
-        <SiteHeader />
-        <main className="pt-24">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="py-12">
-              <ContactForm />
-            </div>
-          </div>
-        </main>
-        <SiteFooter />
-      </div>
-    </div>
-  )
 }
