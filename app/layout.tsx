@@ -3,8 +3,7 @@ import "@/styles/globals.css"
 import { Inter } from "next/font/google"
 import { LoadingProvider } from "@/components/loading-context"
 import { I18nProvider } from "@/lib/i18n-context"
-import Analytics from "@/components/analytics"
-import { Suspense } from "react"
+import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -87,7 +86,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
         {/* Precargar recursos críticos */}
         <link
           rel="preload"
@@ -96,12 +94,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={inter.className}>
-        <Suspense fallback={<div>Loading...</div>}>
-          <I18nProvider>
-            <LoadingProvider>{children}</LoadingProvider>
-          </I18nProvider>
-          <Analytics />
-        </Suspense>
+        {/* Google Analytics */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-B2GDY0W8BX" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-B2GDY0W8BX');
+          `}
+        </Script>
+
+        <I18nProvider>
+          <LoadingProvider>{children}</LoadingProvider>
+        </I18nProvider>
       </body>
     </html>
   )
