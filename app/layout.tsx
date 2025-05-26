@@ -3,6 +3,9 @@ import "@/styles/globals.css"
 import { Inter } from "next/font/google"
 import { LoadingProvider } from "@/components/loading-context"
 import { I18nProvider } from "@/lib/i18n-context"
+import Analytics from "@/components/analytics"
+import CookieBanner from "@/components/cookie-banner"
+import { Suspense } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -85,6 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         {/* Precargar recursos críticos */}
         <link
           rel="preload"
@@ -93,9 +97,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={inter.className}>
-        <I18nProvider>
-          <LoadingProvider>{children}</LoadingProvider>
-        </I18nProvider>
+        <Suspense fallback={<div>Loading...</div>}>
+          <I18nProvider>
+            <LoadingProvider>
+              {children}
+              <CookieBanner />
+            </LoadingProvider>
+          </I18nProvider>
+          <Analytics />
+        </Suspense>
       </body>
     </html>
   )
