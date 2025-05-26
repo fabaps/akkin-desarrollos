@@ -162,6 +162,20 @@ export function SiteHeader() {
                 {t("nav.projects")}
               </Link>
             </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
+              <Link
+                href="/blog-parques-solares"
+                className={`text-sm font-medium transition-colors duration-500 ${
+                  isScrolled ? "text-oxford-600 hover:text-oxford-800" : "text-white hover:text-white/80"
+                }`}
+              >
+                BLOG
+              </Link>
+            </motion.div>
             <Link
               href="/contacto"
               className={`group relative px-6 py-2 backdrop-blur-sm rounded-full overflow-hidden 
@@ -280,6 +294,13 @@ export function SiteHeader() {
                       className="block w-full text-left px-4 py-2 text-lg font-medium text-oxford-100 hover:text-solar-400 transition-colors"
                     >
                       {t("nav.projects")}
+                    </Link>
+                    <Link
+                      href="/blog-parques-solares"
+                      onClick={() => setIsOpen(false)}
+                      className="block w-full text-left px-4 py-2 text-lg font-medium text-oxford-100 hover:text-solar-400 transition-colors"
+                    >
+                      BLOG
                     </Link>
                     <Link
                       href="/contacto"
