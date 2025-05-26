@@ -35,7 +35,7 @@ export const metadata = {
       "Desarrollo de parques solares a mediana y gran escala. Especialistas en desarrollo e instalación de parques solares Guatemala, GDRs Guatemala y EPC solar Guatemala en Guatemala, El Salvador y Honduras.",
     images: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0266%20%281%29.JPG-xh1cVAPlLGHqYmBWpSwHRVxDIkK8vA.jpeg",
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0266%20%281%29_edited_edited.jpg-hhcW5gbKg7YnS4f1Y0GmJjUoqUOHZd.jpeg",
         width: 1200,
         height: 630,
         alt: "AKKIN - Desarrollo de Parques Solares a Gran Escala",
@@ -53,7 +53,7 @@ export const metadata = {
     description:
       "Desarrollo de parques solares a mediana y gran escala. Especialistas en desarrollo e instalación de parques solares Guatemala, GDRs Guatemala y EPC solar Guatemala",
     images: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0266%20%281%29.JPG-xh1cVAPlLGHqYmBWpSwHRVxDIkK8vA.jpeg",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0266%20%281%29_edited_edited.jpg-hhcW5gbKg7YnS4f1Y0GmJjUoqUOHZd.jpeg",
     ],
   },
   // Robots
