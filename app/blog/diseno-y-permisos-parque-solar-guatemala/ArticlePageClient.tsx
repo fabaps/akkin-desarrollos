@@ -3,11 +3,24 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { ServicesBackground } from "@/components/services-background"
-import { Calendar, Clock, User, ArrowLeft, Share2, BookOpen } from "lucide-react"
+import { Calendar, Clock, User, ArrowLeft, Share2, BookOpen, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function ArticlePageClient() {
+  const [copied, setCopied] = useState(false)
+
+  const handleShare = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error("Error al copiar al portapapeles:", err)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-oxford-800">
       {/* Fondo global */}
@@ -18,7 +31,7 @@ export default function ArticlePageClient() {
       <div className="relative">
         <SiteHeader />
         <main className="pt-20">
-          <ArticleContent />
+          <ArticleContent onShare={handleShare} copied={copied} />
         </main>
         <SiteFooter />
       </div>
@@ -26,7 +39,7 @@ export default function ArticlePageClient() {
   )
 }
 
-function ArticleContent() {
+function ArticleContent({ onShare, copied }: { onShare: () => void; copied: boolean }) {
   return (
     <article className="relative py-16">
       <div className="max-w-7xl mx-auto px-6">
@@ -71,9 +84,23 @@ function ArticleContent() {
               <User className="h-5 w-5 text-oxford-300" />
               <span className="text-oxford-300">Por Equipo AKKIN</span>
             </div>
-            <Button variant="outline" size="sm" className="border-oxford-600 text-oxford-300 hover:bg-oxford-700">
-              <Share2 className="h-4 w-4 mr-2" />
-              Compartir
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-oxford-600 text-oxford-300 hover:bg-oxford-700"
+              onClick={onShare}
+            >
+              {copied ? (
+                <>
+                  <Check className="h-4 w-4 mr-2" />
+                  ¡Copiado!
+                </>
+              ) : (
+                <>
+                  <Share2 className="h-4 w-4 mr-2" />
+                  Compartir
+                </>
+              )}
             </Button>
           </div>
         </header>
