@@ -10,9 +10,7 @@ export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G
 
 // Verificar si estamos en producción y si GA está habilitado
 export const isAnalyticsEnabled = () => {
-  return (
-    typeof window !== "undefined" && process.env.NODE_ENV === "production" && GA_MEASUREMENT_ID && !navigator.doNotTrack
-  )
+  return typeof window !== "undefined" && process.env.NODE_ENV === "production" && GA_MEASUREMENT_ID
 }
 
 // Inicializar Google Analytics
@@ -27,17 +25,7 @@ export const initGA = () => {
   // Configuración inicial
   window.gtag("js", new Date())
   window.gtag("config", GA_MEASUREMENT_ID, {
-    // Configuraciones de privacidad
-    anonymize_ip: true,
-    allow_google_signals: false,
-    allow_ad_personalization_signals: false,
-    // Configuraciones de rendimiento
     send_page_view: true,
-    // Configuraciones específicas del sitio
-    custom_map: {
-      custom_parameter_1: "service_type",
-      custom_parameter_2: "user_location",
-    },
   })
 }
 
@@ -77,25 +65,4 @@ export const trackCTAClick = (ctaType: string, location: string) => {
 
 export const trackDownload = (fileName: string, fileType: string) => {
   trackEvent("file_download", "engagement", `${fileType}_${fileName}`)
-}
-
-// Configurar consentimiento de cookies
-export const setAnalyticsConsent = (granted: boolean) => {
-  if (typeof window === "undefined") return
-
-  window.gtag("consent", "update", {
-    analytics_storage: granted ? "granted" : "denied",
-    ad_storage: "denied", // Siempre denegado para mayor privacidad
-  })
-
-  // Guardar preferencia en localStorage
-  localStorage.setItem("analytics_consent", granted.toString())
-}
-
-// Verificar consentimiento guardado
-export const getAnalyticsConsent = (): boolean | null => {
-  if (typeof window === "undefined") return null
-
-  const consent = localStorage.getItem("analytics_consent")
-  return consent ? consent === "true" : null
 }

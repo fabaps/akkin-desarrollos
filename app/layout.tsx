@@ -4,7 +4,6 @@ import { Inter } from "next/font/google"
 import { LoadingProvider } from "@/components/loading-context"
 import { I18nProvider } from "@/lib/i18n-context"
 import Analytics from "@/components/analytics"
-import CookieBanner from "@/components/cookie-banner"
 import { Suspense } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -99,10 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <Suspense fallback={<div>Loading...</div>}>
           <I18nProvider>
-            <LoadingProvider>
-              {children}
-              <CookieBanner />
-            </LoadingProvider>
+            <LoadingProvider>{children}</LoadingProvider>
           </I18nProvider>
           <Analytics />
         </Suspense>
