@@ -92,7 +92,7 @@ function ArticleContent() {
         {/* Breadcrumbs */}
         <nav className="mb-8">
           <Link
-            href="/blog"
+            href="/blog-parques-solares"
             className="inline-flex items-center text-oxford-300 hover:text-solar-400 transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
