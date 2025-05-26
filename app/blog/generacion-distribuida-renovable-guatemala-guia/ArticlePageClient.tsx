@@ -157,7 +157,7 @@ function ArticleContent() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <User className="h-5 w-5 text-oxford-300" />
-              <span className="text-oxford-300">Por Ing. Carlos Mendoza</span>
+              <span className="text-oxford-300">Por Equipo AKKIN</span>
             </div>
             <Button variant="outline" size="sm" className="border-oxford-600 text-oxford-300 hover:bg-oxford-700">
               <Share2 className="h-4 w-4 mr-2" />
