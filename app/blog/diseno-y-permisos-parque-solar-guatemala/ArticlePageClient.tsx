@@ -60,7 +60,7 @@ function ArticleContent({ onShare, copied }: { onShare: () => void; copied: bool
             <span className="bg-solar-500/20 text-solar-400 px-3 py-1 rounded-full">Guía Técnica</span>
             <div className="flex items-center space-x-1">
               <Calendar className="h-4 w-4" />
-              <span>20 de Enero, 2024</span>
+              <span>25 de Mayo, 2025</span>
             </div>
             <div className="flex items-center space-x-1">
               <Clock className="h-4 w-4" />
