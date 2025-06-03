@@ -52,7 +52,7 @@ export function SiteFooter() {
             <p className="text-oxford-300 leading-relaxed">{t("footer.description")}</p>
             <div className="flex items-center space-x-4">
               <motion.a
-                href="https://wa.link/ajdda4"
+                href="https://wa.me/50230916027"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-oxford-700/50 hover:bg-oxford-600/50 transition-colors group"
