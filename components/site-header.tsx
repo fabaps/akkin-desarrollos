@@ -238,8 +238,27 @@ export function SiteHeader() {
 
           {/* Menú móvil */}
           <div className="md:hidden flex items-center space-x-2">
-            {/* Selector de idioma móvil */}
-            <LanguageSwitcher isScrolled={isScrolled} />
+            {/* Botón de WhatsApp móvil */}
+            <a
+              href="https://wa.me/50230916027"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`p-2 rounded-full transition-colors group ${
+                isScrolled ? "hover:bg-oxford-100/10" : "hover:bg-white/10"
+              }`}
+            >
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-rtGx2m4QEipJJ1Yifzp9QigOtu2rhZ.png"
+                alt="WhatsApp"
+                width={24}
+                height={24}
+                className={`transition-all duration-500 ${
+                  isScrolled
+                    ? "brightness-0 invert-0 opacity-70 group-hover:opacity-100"
+                    : "brightness-0 invert opacity-90 group-hover:opacity-100"
+                }`}
+              />
+            </a>
 
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
@@ -309,6 +328,14 @@ export function SiteHeader() {
                     >
                       {t("nav.contact")}
                     </Link>
+                  </div>
+
+                  {/* Selector de idioma en menú móvil */}
+                  <div className="border-t border-oxford-700/50 pt-6">
+                    <p className="px-4 text-sm text-oxford-400 mb-4">Idioma / Language</p>
+                    <div className="px-4">
+                      <LanguageSwitcher isScrolled={false} />
+                    </div>
                   </div>
 
                   {/* Redes sociales */}
