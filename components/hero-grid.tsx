@@ -138,14 +138,14 @@ export function HeroGrid() {
               <div className="relative aspect-[16/9] md:aspect-[16/9] overflow-hidden rounded-2xl h-full">
                 <iframe
                   className="w-full h-full object-cover cursor-pointer"
-                  src="https://www.youtube.com/embed/kF74SgusZu4?autoplay=1&mute=1&loop=1&playlist=kF74SgusZu4&rel=0&controls=0&showinfo=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/cOHnrD0uTWk?autoplay=1&mute=1&loop=1&playlist=cOHnrD0uTWk&rel=0&controls=0&showinfo=0&modestbranding=1"
                   title="AKKIN - Desarrollo de Parques Solares"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                   allowFullScreen
                   loading="lazy"
                   onClick={(e) => {
-                    window.open("https://youtu.be/kF74SgusZu4", "_blank")
+                    window.open("https://youtu.be/cOHnrD0uTWk", "_blank")
                     e.preventDefault()
                   }}
                 ></iframe>
