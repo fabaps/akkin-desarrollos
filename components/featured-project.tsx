@@ -30,6 +30,14 @@ const projectImages = [
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-03-05%20at%2010.21.49%20AM%20%281%29-BcKtXJZkIcNLMmEGFNfZu4Nt50VFJb.jpeg",
     alt: "Operador en maquinaria de hincado instalando soportes para el parque solar",
   },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-06-11%20at%2010.43.34%20AM-13VFcDKPO0Df7qLyH6qFvSZA0ed9BK.jpeg",
+    alt: "Inversor solar instalado con conexiones eléctricas y cableado en el Parque Solar Jutiapa",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-06-11%20at%2010.59.25%20AM-EYyVpBlx4M2ixjNXaOvZLei2sYLtdH.jpeg",
+    alt: "Instalación de transformador eléctrico con grúa en el Parque Solar Jutiapa",
+  },
 ]
 
 export function FeaturedProjectHeader() {
