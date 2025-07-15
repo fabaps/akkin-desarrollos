@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "clean": "rm -rf node_modules .next && npm install",
+    "dev": "next dev",
     "lint": "next lint",
-    "clean": "rm -rf node_modules .next && npm install"
+    "start": "next start"
   },
   "overrides": {
-    "react-day-picker": "0.0.0",
-    "date-fns": "0.0.0"
+    "date-fns": "0.0.0",
+    "react-day-picker": "0.0.0"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",

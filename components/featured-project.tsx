@@ -11,25 +11,25 @@ import { useI18n } from "@/lib/i18n-context"
 
 const projectImages = [
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0253.jpg-bsaYiaPs14ppbI8WQSE1sMPsZ4a5kh.jpeg",
-    alt: "Vista aérea del Parque Solar Jutiapa mostrando la instalación completa de paneles solares",
-  },
-  {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0259.jpg-u2Zwf6ZELJ34HLV3hzQrEpzNlXAm5T.jpeg",
-    alt: "Vista aérea del Parque Solar Jutiapa desde otro ángulo mostrando los paneles y campos agrícolas circundantes",
-  },
-  {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0262.jpg-LTXWy1vq6lsK7mfxDBgnvHuP7Aaq2X.jpeg",
-    alt: "Vista aérea del Parque Solar Jutiapa mostrando paneles instalados y estructuras de montaje en preparación",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-07-14%20191312.png-SLAD1N56PDPhk19Tz9kqaVk6OjtWDM.jpeg",
+    alt: "Vista aérea de un parque solar con paneles instalados y campos agrícolas circundantes",
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0266%20%281%29.jpg-uL3MVsjjoy108XzODNyv32fJzyzNNG.jpeg",
     alt: "Equipo de ingenieros e instaladores del Parque Solar Jutiapa posando entre filas de paneles solares",
+  }, // This was the 5th, now 2nd
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-07-14%20210854-ZiBOovynFgx6zKET2uHqRv5HRvNb0E.png",
+    alt: "Vista aérea de un parque solar en construcción mostrando la disposición de los paneles solares",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-03-05%20at%2010.21.49%20AM%20%281%29-BcKtXJZkIcNLMmEGFNfZu4Nt50VFJb.jpeg",
-    alt: "Operador en maquinaria de hincado instalando soportes para el parque solar",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mO4oQPNkKQYbpUgoCUy9VibaOeAosH.png",
+    alt: "Vista a nivel del suelo de un gran campo de paneles solares bajo un cielo parcialmente nublado",
   },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-07-14%20210914.png-Dvyp6fcRwvDBOpjxXVj7rb9yBzd1Ar.jpeg",
+    alt: "Vista aérea de un parque solar en construcción con filas de paneles solares en terreno seco",
+  }, // This was the 2nd, now 5th
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-06-11%20at%2010.43.34%20AM-13VFcDKPO0Df7qLyH6qFvSZA0ed9BK.jpeg",
     alt: "Inversor solar instalado con conexiones eléctricas y cableado en el Parque Solar Jutiapa",
@@ -62,15 +62,15 @@ export function FeaturedProjectHeader() {
               transition={{ delay: 0.2 }}
             >
               <Badge
-                className="relative bg-oxford-700/60 text-solar-200 backdrop-blur-sm border border-solar-500/30 
-                     px-4 py-1.5 text-sm font-medium"
+                className="relative bg-oxford-700/60 text-green-200 backdrop-blur-sm border border-green-500/30
+                   px-4 py-1.5 text-sm font-medium"
               >
                 <span className="flex items-center gap-2">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-solar-400 opacity-75"></span>
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-solar-500"></span>
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
                   </span>
-                  {t("featuredProject.inProgress")}
+                  Terminado
                 </span>
               </Badge>
             </motion.div>

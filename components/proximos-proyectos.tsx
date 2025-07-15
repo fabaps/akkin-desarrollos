@@ -17,6 +17,15 @@ const proyectosFuturos = [
     descripcion: "Proyecto de energía solar fotovoltaica con capacidad de 6MW.",
     imagen: "/images/lumina-project.png",
   },
+  {
+    id: 2,
+    nombre: "Parque Solar Voltia",
+    ubicacion: "San Marcos, Los Limones, Guatemala",
+    fechaInicio: "2026", // Assuming a future date for a new project
+    descripcion: "Proyecto de energía solar fotovoltaica con capacidad de 6MW.",
+    imagen:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%2014%20jul%202025%2C%2021_52_32-Ap8Dkh369Aul76cmCTpbYHSPQcFUP9.png", // Using the provided image URL
+  },
 ]
 
 export function ProximosProyectos() {
