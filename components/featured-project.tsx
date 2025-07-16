@@ -132,7 +132,6 @@ export function FeaturedProject() {
       value: "2025",
       label: t("featuredProject.operations"),
     },
-    // Removed the "100+ jobs" entry
     {
       icon: Zap,
       value: "16",
@@ -302,25 +301,7 @@ export function FeaturedProject() {
               </div>
 
               {/* Key Benefits */}
-              <div className="space-y-4">
-                {[
-                  t("featuredProject.benefit1"),
-                  t("featuredProject.benefit2"),
-                  t("featuredProject.benefit3"),
-                  t("featuredProject.benefit4"),
-                ].map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-center gap-3"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    {/* Removed the bullet point div */}
-                    <span className="text-oxford-200">{benefit}</span>
-                  </motion.div>
-                ))}
-              </div>
+              <div className="space-y-4">{/* Removed the bullet points as requested */}</div>
             </div>
           </motion.div>
         </div>
