@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import { ServicesBackground } from "./services-background"
-import { Sun, Calendar, Users, ChevronLeft, ChevronRight, Zap, Grid } from "lucide-react"
+import { Sun, Calendar, ChevronLeft, ChevronRight, Zap, Grid } from "lucide-react"
 import { useInView } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { useI18n } from "@/lib/i18n-context"
@@ -132,11 +132,7 @@ export function FeaturedProject() {
       value: "2025",
       label: t("featuredProject.operations"),
     },
-    {
-      icon: Users,
-      value: "100+",
-      label: t("featuredProject.jobs"),
-    },
+    // Removed the "100+ jobs" entry
     {
       icon: Zap,
       value: "16",
@@ -296,7 +292,12 @@ export function FeaturedProject() {
                 <div className="absolute -inset-px bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl [mask-image:radial-gradient(farthest-side_at_top,white,transparent)]" />
                 <div className="relative space-y-6">
                   <h3 className="text-2xl font-bold text-oxford-100">{t("featuredProject.joinTitle")}</h3>
-                  <p className="text-oxford-300 leading-relaxed">{t("featuredProject.description")}</p>
+                  <p className="text-oxford-300 leading-relaxed">
+                    Este proyecto de vanguardia está diseñado para generar energía sostenible, reducir la huella de
+                    carbono y fomentar el desarrollo económico local. Con una capacidad de 6MW, contribuirá
+                    significativamente a la matriz energética del país, proporcionando energía limpia y confiable para
+                    miles de hogares y empresas.
+                  </p>
                 </div>
               </div>
 
@@ -315,7 +316,7 @@ export function FeaturedProject() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <div className="w-2 h-2 rounded-full bg-oxford-400" />
+                    {/* Removed the bullet point div */}
                     <span className="text-oxford-200">{benefit}</span>
                   </motion.div>
                 ))}
