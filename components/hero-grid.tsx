@@ -84,7 +84,7 @@ export function HeroGrid() {
         ))}
       </div>
 
-      {/* Contenido principal (título móvil y certificaciones) */}
+      {/* Contenido principal (título móvil, título de escritorio y certificaciones) */}
       <div className="max-w-7xl mx-auto px-6 relative z-20">
         {" "}
         {/* z-20 para que esté encima del video y partículas */}
@@ -140,60 +140,53 @@ export function HeroGrid() {
             </div>
           </motion.div>
 
-          {/* Video (now just a placeholder for the content that was previously here, as the video is full-bleed) */}
+          {/* Título de escritorio (visible solo en tablet y desktop) */}
           <motion.div
-            className="w-full relative group"
+            className="w-full relative group hidden md:block max-w-2xl" // Added max-w-2xl for consistent width
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.4 }}
           >
-            <div className="relative overflow-hidden rounded-2xl bg-oxford-700/50 backdrop-blur-sm border border-oxford-500/20 hover:border-oxford-400/30 transition-all duration-300 h-full">
-              {/* Título superpuesto SOLO en tablet y desktop */}
-              <div className="absolute top-8 left-8 max-w-2xl pointer-events-none hidden md:block">
-                <div className="relative">
-                  <div className="p-6 rounded-xl bg-oxford-800/40 backdrop-blur-[2px] border border-oxford-700/20">
-                    <motion.div
-                      className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-solar-400 to-solar-600"
-                      initial={{ scaleY: 0 }}
-                      animate={{ scaleY: 1 }}
-                      transition={{ duration: 0.5 }}
-                    />
-                    <motion.h1
-                      className="text-5xl lg:text-6xl font-bold text-white leading-tight pl-4"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 1 }}
-                    >
-                      <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="block"
-                      >
-                        {t("hero.title1")}
-                      </motion.span>
-                      <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                        className="block bg-gradient-to-r from-white to-gray-300 text-transparent bg-clip-text"
-                      >
-                        {t("hero.title2")}
-                      </motion.span>
-                      <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8 }}
-                        className="block text-3xl lg:text-4xl text-gray-300 mt-2"
-                      >
-                        {t("hero.subtitle")}
-                      </motion.span>
-                    </motion.h1>
-                  </div>
-                </div>
-              </div>
+            <div className="relative p-6 rounded-xl bg-oxford-800/40 backdrop-blur-[2px] border border-oxford-700/20">
+              <motion.div
+                className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-solar-400 to-solar-600"
+                initial={{ scaleY: 0 }}
+                animate={{ scaleY: 1 }}
+                transition={{ duration: 0.5 }}
+              />
+              <motion.h1
+                className="text-5xl lg:text-6xl font-bold text-white leading-tight pl-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="block"
+                >
+                  {t("hero.title1")}
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="block bg-gradient-to-r from-white to-gray-300 text-transparent bg-clip-text"
+                >
+                  {t("hero.title2")}
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 }}
+                  className="block text-3xl lg:text-4xl text-gray-300 mt-2"
+                >
+                  {t("hero.subtitle")}
+                </motion.span>
+              </motion.h1>
             </div>
-            {/* Elementos decorativos */}
+            {/* Elementos decorativos para la tarjeta del título */}
             <div className="absolute -inset-px bg-gradient-to-r from-oxford-400/20 to-oxford-300/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity -z-10" />
           </motion.div>
 
