@@ -93,8 +93,8 @@ export function ContactForm() {
               {/* Teléfono */}
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-solar-400" />
-                <a href="tel:30916027" className="text-oxford-300 hover:text-oxford-100 transition-colors">
-                  3091 6027
+                <a href="tel:30916300" className="text-oxford-300 hover:text-oxford-100 transition-colors">
+                  3091 6300
                 </a>
               </div>
 

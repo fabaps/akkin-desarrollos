@@ -75,7 +75,7 @@ export const metadata = {
     "og:image:type": "image/jpeg",
     "og:image:alt": "AKKIN - Desarrollo de Parques Solares a Gran Escala",
   },
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

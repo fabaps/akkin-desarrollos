@@ -52,7 +52,7 @@ export function SiteFooter() {
             <p className="text-oxford-300 leading-relaxed">{t("footer.description")}</p>
             <div className="flex items-center space-x-4">
               <motion.a
-                href="https://wa.me/50230916027"
+                href="https://wa.me/50230916300"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-oxford-700/50 hover:bg-oxford-600/50 transition-colors group"
@@ -149,8 +149,8 @@ export function SiteFooter() {
               </motion.li>
               <motion.li whileHover={{ x: 5 }} className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-oxford-300 flex-shrink-0" />
-                <a href="tel:30916027" className="text-oxford-300 hover:text-oxford-100 transition-colors">
-                  3091 6027
+                <a href="tel:30916300" className="text-oxford-300 hover:text-oxford-100 transition-colors">
+                  3091 6300
                 </a>
               </motion.li>
               <motion.li whileHover={{ x: 5 }} className="flex items-center space-x-3">
