@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { motion, useMotionValue, useSpring } from "framer-motion"
+import { motion, useTransform, useMotionValue, useSpring } from "framer-motion"
 import { useRef } from "react"
 import { useInView } from "framer-motion"
 import { CheckCircle } from "lucide-react"
@@ -13,7 +13,7 @@ export function HeroGrid() {
   const containerRef = useRef(null)
   const isInView = useInView(containerRef, { margin: "-100px" })
 
-  // Mouse tracking setup (still useful for other elements if needed, or can be removed if not used)
+  // Mouse tracking setup
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
@@ -28,41 +28,23 @@ export function HeroGrid() {
     mouseY.set(clientY - top)
   }
 
+  // Parallax effect for background
+  const xBg = useTransform(smoothX, [0, 1000], [100, -100])
+  const yBg = useTransform(smoothY, [0, 1000], [100, -100])
+
   return (
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
       className="relative min-h-screen w-full overflow-hidden bg-oxford-800"
     >
-      {/* Services Background (existing global background) */}
+      {/* Services Background */}
       <div className="absolute inset-0">
         <ServicesBackground />
       </div>
 
-      {/* Full-bleed Video Background */}
-      <motion.div
-        className="absolute inset-0 w-full h-full overflow-hidden z-0" // z-0 para que esté detrás del contenido
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 1 }}
-      >
-        <iframe
-          className="w-full h-full object-cover" // El iframe cubre todo el contenedor
-          src="https://www.youtube.com/embed/cOHnrD0uTWk?autoplay=1&mute=1&loop=1&playlist=cOHnrD0uTWk&rel=0&controls=0&showinfo=0&modestbranding=1"
-          title="AKKIN - Desarrollo de Parques Solares"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-          allowFullScreen
-          loading="lazy"
-          onClick={(e) => {
-            window.open("https://youtu.be/cOHnrD0uTWk", "_blank")
-            e.preventDefault()
-          }}
-        ></iframe>
-      </motion.div>
-
-      {/* Floating particles - ensure they are above the video background */}
-      <div className="absolute inset-0 z-10">
+      {/* Floating particles */}
+      <div className="absolute inset-0">
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
@@ -84,12 +66,10 @@ export function HeroGrid() {
         ))}
       </div>
 
-      {/* Contenido principal (título móvil, título de escritorio y certificaciones) */}
-      <div className="max-w-7xl mx-auto px-6 relative z-20">
-        {" "}
-        {/* z-20 para que esté encima del video y partículas */}
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Espaciado para el header fijo */}
         <div className="h-16" />
+
         {/* Estructura principal */}
         <div className="flex flex-col py-2 md:py-12 min-h-[calc(100vh-4rem)] space-y-3 md:space-y-8">
           {/* Título para móvil (arriba del video) */}
@@ -140,53 +120,83 @@ export function HeroGrid() {
             </div>
           </motion.div>
 
-          {/* Título de escritorio (visible solo en tablet y desktop) */}
+          {/* Video */}
           <motion.div
-            className="w-full relative group hidden md:block max-w-2xl" // Added max-w-2xl for consistent width
+            className="w-full relative group"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.4 }}
           >
-            <div className="relative p-6 rounded-xl bg-oxford-800/40 backdrop-blur-[2px] border border-oxford-700/20">
+            <div className="relative overflow-hidden rounded-2xl bg-oxford-700/50 backdrop-blur-sm border border-oxford-500/20 hover:border-oxford-400/30 transition-all duration-300 h-full">
               <motion.div
-                className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-solar-400 to-solar-600"
-                initial={{ scaleY: 0 }}
-                animate={{ scaleY: 1 }}
-                transition={{ duration: 0.5 }}
+                className="absolute inset-0 bg-gradient-to-r from-oxford-600/20 to-oxford-500/20"
+                style={{
+                  x: xBg,
+                  y: yBg,
+                }}
               />
-              <motion.h1
-                className="text-5xl lg:text-6xl font-bold text-white leading-tight pl-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-              >
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="block"
-                >
-                  {t("hero.title1")}
-                </motion.span>
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="block bg-gradient-to-r from-white to-gray-300 text-transparent bg-clip-text"
-                >
-                  {t("hero.title2")}
-                </motion.span>
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                  className="block text-3xl lg:text-4xl text-gray-300 mt-2"
-                >
-                  {t("hero.subtitle")}
-                </motion.span>
-              </motion.h1>
+              <div className="relative aspect-[16/9] md:aspect-[16/9] overflow-hidden rounded-2xl h-full">
+                <iframe
+                  className="w-full h-full object-cover cursor-pointer"
+                  src="https://www.youtube.com/embed/cOHnrD0uTWk?autoplay=1&mute=1&loop=1&playlist=cOHnrD0uTWk&rel=0&controls=0&showinfo=0&modestbranding=1"
+                  title="AKKIN - Desarrollo de Parques Solares"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                  allowFullScreen
+                  loading="lazy"
+                  onClick={(e) => {
+                    window.open("https://youtu.be/cOHnrD0uTWk", "_blank")
+                    e.preventDefault()
+                  }}
+                ></iframe>
+
+                {/* Título superpuesto SOLO en tablet y desktop */}
+                <div className="absolute top-8 left-8 max-w-2xl pointer-events-none hidden md:block">
+                  <div className="relative">
+                    <div className="p-6 rounded-xl bg-oxford-800/40 backdrop-blur-[2px] border border-oxford-700/20">
+                      <motion.div
+                        className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-solar-400 to-solar-600"
+                        initial={{ scaleY: 0 }}
+                        animate={{ scaleY: 1 }}
+                        transition={{ duration: 0.5 }}
+                      />
+                      <motion.h1
+                        className="text-5xl lg:text-6xl font-bold text-white leading-tight pl-4"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1 }}
+                      >
+                        <motion.span
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.2 }}
+                          className="block"
+                        >
+                          {t("hero.title1")}
+                        </motion.span>
+                        <motion.span
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.4 }}
+                          className="block bg-gradient-to-r from-white to-gray-300 text-transparent bg-clip-text"
+                        >
+                          {t("hero.title2")}
+                        </motion.span>
+                        <motion.span
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.8 }}
+                          className="block text-3xl lg:text-4xl text-gray-300 mt-2"
+                        >
+                          {t("hero.subtitle")}
+                        </motion.span>
+                      </motion.h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            {/* Elementos decorativos para la tarjeta del título */}
+            {/* Elementos decorativos */}
             <div className="absolute -inset-px bg-gradient-to-r from-oxford-400/20 to-oxford-300/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity -z-10" />
           </motion.div>
 
@@ -229,7 +239,7 @@ export function HeroGrid() {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-oxford-800 to-transparent z-20" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-oxford-800 to-transparent" />
     </div>
   )
 }
