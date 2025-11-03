@@ -24,7 +24,7 @@ const proyectosFuturos = [
     fechaInicio: "2026", // Assuming a future date for a new project
     descripcion: "Proyecto de energía solar fotovoltaica con capacidad de 6MW.",
     imagen:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%2014%20jul%202025%2C%2021_52_32-Ap8Dkh369Aul76cmCTpbYHSPQcFUP9.png",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%2014%20jul%202025%2C%2021_52_32-Ap8Dkh369Aul76cmCTpbYHSPQcFUP9.png", // Using the provided image URL
   },
   {
     id: 3,
@@ -32,8 +32,7 @@ const proyectosFuturos = [
     ubicacion: "San Marcos, Guatemala",
     fechaInicio: "2026",
     descripcion: "Proyecto de energía solar fotovoltaica con capacidad de 3MW.",
-    imagen:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%203%20nov%202025%2C%2016_30_47-1UySgqJRAyo44JwfQMxhMUE3gMAYQq.png",
+    imagen: "/images/olimpia-project.png",
   },
 ]
 
