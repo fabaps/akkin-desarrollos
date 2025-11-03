@@ -180,9 +180,7 @@ export function SiteFooter() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-oxford-700/50">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-oxford-400 text-sm">
-              © {new Date().getFullYear()} AKKIN. {t("footer.rights")}
-            </p>
+            <p className="text-oxford-400 text-sm">© 2026 AKKIN. {t("footer.rights")}</p>
             <div className="flex space-x-6">
               <a href="#" className="text-oxford-400 hover:text-oxford-300 text-sm">
                 {t("footer.privacy")}
