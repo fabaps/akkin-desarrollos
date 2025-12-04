@@ -1,5 +1,5 @@
 import type React from "react"
-import "@/styles/globals.css"
+import "@/app/globals.css"
 import { Inter } from "next/font/google"
 import { LoadingProvider } from "@/components/loading-context"
 import { I18nProvider } from "@/lib/i18n-context"
@@ -17,13 +17,13 @@ export const metadata = {
   icons: {
     icon: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Centro%20Tecnol%C3%B3gico_edited-gtmuhJVDTt1BK3DNJ734xefWVsftTA.png",
+        url: "/images/centro-20tecnol-c3-b3gico-edited.png",
         type: "image/png",
       },
     ],
     apple: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Centro%20Tecnol%C3%B3gico_edited-gtmuhJVDTt1BK3DNJ734xefWVsftTA.png",
+        url: "/images/centro-20tecnol-c3-b3gico-edited.png",
         type: "image/png",
         sizes: "180x180",
       },
@@ -36,7 +36,7 @@ export const metadata = {
       "Desarrollo de parques solares a mediana y gran escala. Especialistas en desarrollo e instalación de parques solares Guatemala, GDRs Guatemala y EPC solar Guatemala en Guatemala, El Salvador y Honduras.",
     images: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0266%20%281%29_edited_edited.jpg-hhcW5gbKg7YnS4f1Y0GmJjUoqUOHZd.jpeg",
+        url: "/images/dji-0266-20-281-29-edited-edited.jpeg",
         width: 1200,
         height: 630,
         alt: "AKKIN - Desarrollo de Parques Solares a Gran Escala",
@@ -53,9 +53,7 @@ export const metadata = {
     title: "AKKIN - Parques Solares Guatemala a Gran Escala",
     description:
       "Desarrollo de parques solares a mediana y gran escala. Especialistas en desarrollo e instalación de parques solares Guatemala, GDRs Guatemala y EPC solar Guatemala",
-    images: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0266%20%281%29_edited_edited.jpg-hhcW5gbKg7YnS4f1Y0GmJjUoqUOHZd.jpeg",
-    ],
+    images: ["/images/dji-0266-20-281-29-edited-edited.jpeg"],
   },
   // Robots
   robots: {
@@ -75,7 +73,7 @@ export const metadata = {
     "og:image:type": "image/jpeg",
     "og:image:alt": "AKKIN - Desarrollo de Parques Solares a Gran Escala",
   },
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -87,11 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         {/* Precargar recursos críticos */}
-        <link
-          rel="preload"
-          href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Centro%20Tecnol%C3%B3gico_edited-gtmuhJVDTt1BK3DNJ734xefWVsftTA.png"
-          as="image"
-        />
+        <link rel="preload" href="/images/centro-20tecnol-c3-b3gico-edited.png" as="image" />
       </head>
       <body className={inter.className}>
         {/* Google Analytics */}
