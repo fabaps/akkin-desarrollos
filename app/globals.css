@@ -45,6 +45,18 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Added custom colors for solar projects */
+    --oxford-900: 223 45% 12%;
+    --oxford-800: 223 41% 18%;
+    --oxford-700: 223 37% 24%;
+    --oxford-600: 223 35% 35%;
+    --oxford-500: 223 30% 45%;
+    --oxford-400: 223 25% 60%;
+    --oxford-300: 223 20% 75%;
+    --oxford-200: 223 15% 85%;
+    --oxford-100: 223 10% 95%;
+    --solar-orange: 24 100% 50%;
+    --solar-light: 24 100% 70%;
   }
   .dark {
     --background: 0 0% 3.9%;
