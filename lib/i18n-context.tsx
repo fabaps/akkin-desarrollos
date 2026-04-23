@@ -49,16 +49,16 @@ const translations: TranslationsType = {
     en: "License Management",
   },
   "services.finances": {
-    es: "Finanzas",
-    en: "Finances",
+    es: "Participatión en Proyectos",
+    en: "Participation in Projects",
   },
   "services.finances.description": {
     es: "Invertimos y participamos activamente en proyectos solares, aportando capital y know-how",
     en: "We invest and actively participate in solar projects, providing capital and know-how",
   },
   "services.finances.hero.title": {
-    es: "Finanzas",
-    en: "Finance",
+    es: "Participatión en Proyectos",
+    en: "Participation in Projects",
   },
   "services.finances.hero.subtitle": {
     es: "Solares",
