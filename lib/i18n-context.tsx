@@ -1,16 +1,22 @@
-"use client"
+"use client";
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  type ReactNode,
+} from "react";
 
 // Tipos de idiomas soportados
-export type Language = "es" | "en"
+export type Language = "es" | "en";
 
 // Estructura de traducciones
 type TranslationsType = {
   [key: string]: {
-    [key in Language]: string
-  }
-}
+    [key in Language]: string;
+  };
+};
 
 // Diccionario de traducciones
 // Aquí incluimos todas las cadenas de texto que aparecen en la aplicación
@@ -41,6 +47,98 @@ const translations: TranslationsType = {
   "services.licenses": {
     es: "Gestión de Licencias",
     en: "License Management",
+  },
+  "services.finances": {
+    es: "Finanzas Solares",
+    en: "Solar Finance",
+  },
+  "services.finances.description": {
+    es: "Invertimos y participamos activamente en proyectos solares, aportando capital y know-how",
+    en: "We invest and actively participate in solar projects, providing capital and know-how",
+  },
+  "services.finances.hero.title": {
+    es: "Finanzas",
+    en: "Finance",
+  },
+  "services.finances.hero.subtitle": {
+    es: "Solares",
+    en: "Solar",
+  },
+  "services.finances.hero.description": {
+    es: "Te ayudamos a entender elaspecto financiero de tu proyecto solar:",
+    en: "We help you understand the financial aspect of your solar project:",
+  },
+  "services.finances.hero.item1": {
+    es: "Análisis de retorno de inversión (ROI)",
+    en: "Return on investment analysis (ROI)",
+  },
+  "services.finances.hero.item2": {
+    es: "Opciones de financiamiento y leasing",
+    en: "Financing and leasing options",
+  },
+  "services.finances.hero.item3": {
+    es: "Bonos fiscales y exenciones de impuestos",
+    en: "Tax credits and tax exemptions",
+  },
+  "services.finances.hero.item4": {
+    es: "Proyecciones de ahorro a largo plazo",
+    en: "Long-term savings projections",
+  },
+  "services.finances.hero.cta": {
+    es: "Contáctanos",
+    en: "Contact us",
+  },
+  "services.finances.content.title1": {
+    es: "Análisis",
+    en: "Analysis",
+  },
+  "services.finances.content.title2": {
+    es: "Financiero",
+    en: "Financial",
+  },
+  "services.finances.content.subtitle": {
+    es: "Evaluamos la viabilidad económica de tu proyecto solar",
+    en: "We evaluate the economic viability of your solar project",
+  },
+  "services.finances.content.step1.title": {
+    es: "Análisis de Inversión",
+    en: "Investment Analysis",
+  },
+  "services.finances.content.step1.description": {
+    es: "Realizamos un análisis detallado de retorno de inversión (ROI) y proyecciones financieras para tu proyecto solar.",
+    en: "We perform a detailed return on investment (ROI) analysis and financial projections for your solar project.",
+  },
+  "services.finances.content.step2.title": {
+    es: "Opciones de Financiamiento",
+    en: "Financing Options",
+  },
+  "services.finances.content.step2.description": {
+    es: "Te conectamos con instituciones financieras y opciones de leasing adaptadas a proyectos de energía renovable.",
+    en: "We connect you with financial institutions and leasing options tailored to renewable energy projects.",
+  },
+  "services.finances.content.step3.title": {
+    es: "Beneficios Fiscales",
+    en: "Tax Benefits",
+  },
+  "services.finances.content.step3.description": {
+    es: "Identificamos y gestionamos los bonos fiscales y exenciones de impuestos disponibles para proyectos de energía limpia.",
+    en: "We identify and manage tax credits and exemptions available for clean energy projects.",
+  },
+  "services.finances.content.step4.title": {
+    es: "Proyección de Ahorro",
+    en: "Savings Projection",
+  },
+  "services.finances.content.step4.description": {
+    es: "Calculamos el ahorro a largo plazo en facturas eléctricas y beneficios ambientales.",
+    en: "We calculate long-term savings on electric bills and environmental benefits.",
+  },
+  "services.finances.cta.title": {
+    es: "¿Listo para iniciar su proyecto solar?",
+    en: "Ready to start your solar project?",
+  },
+  "services.finances.cta.button": {
+    es: "Contáctanos",
+    en: "Contact us",
   },
   "services.title": {
     es: "Nuestros Servicios",
@@ -136,6 +234,14 @@ const translations: TranslationsType = {
     es: "Proceso completo de certificación y autorización para interconexión.",
     en: "Complete certification and authorization process for interconnection.",
   },
+  "serviceCards.finances": {
+    es: "Finanzas Solares",
+    en: "Solar Finance",
+  },
+  "serviceCards.finances.description": {
+    es: "Invertimos y participamos activamente en proyectos solares, aportando capital y know-how",
+    en: "We invest and actively participate in solar projects, providing capital and know-how",
+  },
   "serviceCards.viewMore": {
     es: "Ver más",
     en: "View more",
@@ -211,8 +317,8 @@ const translations: TranslationsType = {
 
   // Proyecto destacado
   "featuredProject.inProgress": {
-    es: "En Ejecución",
-    en: "In Progress",
+    es: "Terminado y Operando",
+    en: "Completed and Operating",
   },
   "featuredProject.project": {
     es: "Proyecto",
@@ -798,54 +904,60 @@ const translations: TranslationsType = {
     es: "Ruta 4 5-58,\nCdad. de Guatemala",
     en: "Ruta 4 5-58,\nGuatemala City",
   },
-}
+};
 
 // Tipo para el contexto
 type I18nContextType = {
-  language: Language
-  setLanguage: (lang: Language) => void
-  t: (key: string) => string
-}
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (key: string) => string;
+};
 
 // Crear el contexto
-const I18nContext = createContext<I18nContextType | undefined>(undefined)
+const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
 // Proveedor del contexto
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("es")
+  const [language, setLanguage] = useState<Language>("es");
 
   // Cargar preferencia de idioma del usuario si existe
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("language") as Language
+    const savedLanguage = localStorage.getItem("language") as Language;
     if (savedLanguage && (savedLanguage === "es" || savedLanguage === "en")) {
-      setLanguage(savedLanguage)
+      setLanguage(savedLanguage);
     }
-  }, [])
+  }, []);
 
   // Guardar preferencia de idioma cuando cambia
   useEffect(() => {
-    localStorage.setItem("language", language)
+    localStorage.setItem("language", language);
     // Actualizar el atributo lang del HTML
-    document.documentElement.lang = language
-  }, [language])
+    document.documentElement.lang = language;
+  }, [language]);
 
   // Función para obtener traducciones
   const t = (key: string): string => {
     if (translations[key] && translations[key][language]) {
-      return translations[key][language]
+      return translations[key][language];
     }
-    console.warn(`Translation missing for key: ${key} in language: ${language}`)
-    return key
-  }
+    console.warn(
+      `Translation missing for key: ${key} in language: ${language}`,
+    );
+    return key;
+  };
 
-  return <I18nContext.Provider value={{ language, setLanguage, t }}>{children}</I18nContext.Provider>
+  return (
+    <I18nContext.Provider value={{ language, setLanguage, t }}>
+      {children}
+    </I18nContext.Provider>
+  );
 }
 
 // Hook para usar el contexto
 export function useI18n() {
-  const context = useContext(I18nContext)
+  const context = useContext(I18nContext);
   if (context === undefined) {
-    throw new Error("useI18n must be used within an I18nProvider")
+    throw new Error("useI18n must be used within an I18nProvider");
   }
-  return context
+  return context;
 }

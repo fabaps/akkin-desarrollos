@@ -26,7 +26,7 @@ const proyectosFuturos = [
     state: "Levantamiento de capital",
     fechaInicio: "2026",
     descripcion:
-      "Proyecto de energía solar fotovoltaica con capacidad de 7.5MW.",
+      "Proyecto de energía solar fotovoltaica con capacidad de 6.5MW.",
     imagen: "/images/voltia-project.png",
   },
   {

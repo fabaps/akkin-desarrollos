@@ -145,6 +145,12 @@ export function SiteHeader() {
                   >
                     {t("services.licenses")}
                   </Link>
+                  <Link
+                    href="/contacto"
+                    className={`block px-4 py-2 text-sm ${isScrolled ? "text-oxford-600 hover:bg-gray-100" : "text-oxford-100 hover:bg-oxford-700/50"}`}
+                  >
+                    {t("services.finances")}
+                  </Link>
                 </div>
               </div>
             </div>
@@ -285,6 +291,13 @@ export function SiteHeader() {
                           className="block px-4 py-1 text-base text-oxford-300 hover:text-solar-400 transition-colors"
                         >
                           {t("services.licenses")}
+                        </Link>
+                        <Link
+                          href="/contacto"
+                          onClick={() => setIsOpen(false)}
+                          className="block px-4 py-1 text-base text-oxford-300 hover:text-solar-400 transition-colors"
+                        >
+                          {t("services.finances")}
                         </Link>
                       </div>
                     </div>

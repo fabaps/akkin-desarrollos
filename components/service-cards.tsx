@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useRef } from "react"
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import Image from "next/image"
-import Link from "next/link"
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 import {
   FileText,
   Wrench,
@@ -20,28 +20,31 @@ import {
   Cable,
   Radio,
   Wifi,
-} from "lucide-react"
-import { useI18n } from "@/lib/i18n-context"
+  TrendingUp,
+  Wallet,
+  PiggyBank,
+} from "lucide-react";
+import { useI18n } from "@/lib/i18n-context";
 
 interface ServiceDetail {
-  title: string
-  description: string
-  icon: React.ReactNode
-  image?: string
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  image?: string;
 }
 
 interface Service {
-  id: number
-  title: string
-  description: string
-  icon: React.ReactNode
-  details: ServiceDetail[]
-  image: string
-  url?: string // URL para "Ver más" (a definir en el futuro)
+  id: number;
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  details: ServiceDetail[];
+  image: string;
+  url?: string; // URL para "Ver más" (a definir en el futuro)
 }
 
 export function ServiceCards() {
-  const { t } = useI18n()
+  const { t } = useI18n();
 
   // En el array de servicios, mantener los títulos exactamente como están en las páginas individuales:
   const services: Service[] = [
@@ -50,7 +53,8 @@ export function ServiceCards() {
       title: t("serviceCards.design.title"),
       description: t("serviceCards.design.description"),
       icon: <FileText className="h-6 w-6 text-white" />,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-tWqbDF1JNtHZP9fb7ZjlEUuZhntxBK.png",
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-tWqbDF1JNtHZP9fb7ZjlEUuZhntxBK.png",
       details: [
         {
           title: "Diseño Financiero y Técnico",
@@ -76,7 +80,8 @@ export function ServiceCards() {
       title: t("serviceCards.construction.title"),
       description: t("serviceCards.construction.description"),
       icon: <Wrench className="h-6 w-6 text-white" />,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0266.JPG-Iabxu7gISdybNLzK0xZjG3yDS1IIMe.jpeg",
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0266.JPG-Iabxu7gISdybNLzK0xZjG3yDS1IIMe.jpeg",
       details: [
         {
           title: "Hincado",
@@ -134,7 +139,8 @@ export function ServiceCards() {
       title: t("serviceCards.licenses.title"),
       description: t("serviceCards.licenses.description"),
       icon: <Plug className="h-6 w-6 text-white" />,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-H1nMrPXW4SpIQzMIQXXfbdhRHTE6QA.png",
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-H1nMrPXW4SpIQzMIQXXfbdhRHTE6QA.png",
       details: [
         {
           title: "Gestión de Conexión",
@@ -147,13 +153,41 @@ export function ServiceCards() {
       ],
       url: "/servicios/gestion-de-licencias",
     },
-  ]
+    {
+      id: 4,
+      title: t("services.finances"),
+      description: t("services.finances.description"),
+      icon: <TrendingUp className="h-6 w-6 text-white" />,
+      image: "/images/finances.png",
+      details: [
+        {
+          title: "Análisis de Inversión",
+          description:
+            "Evaluamos la viabilidad financiera de tu proyecto solar con análisis detallados de retorno de inversión y ahorro a largo plazo.",
+          icon: <Wallet className="h-5 w-5 text-white" />,
+          image:
+            "https://images.unsplash.com/photo-1554224155-8d04cb21cd83?w=800&auto=format&fit=crop&q=80",
+        },
+        {
+          title: "Financiamiento",
+          description:
+            "Te conectamos con opciones de financiamiento y bonos fiscales disponibles para proyectos de energía renovable.",
+          icon: <PiggyBank className="h-5 w-5 text-white" />,
+          image: "/images/finances.png",
+        },
+      ],
+      url: "/servicios/finanzas-solares",
+    },
+  ];
 
-  const containerRef = useRef(null)
-  const isInView = useInView(containerRef, { margin: "-100px" })
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { margin: "-100px" });
 
   return (
-    <div ref={containerRef} className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <div
+      ref={containerRef}
+      className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
+    >
       {services.map((service) => (
         <motion.div
           key={service.id}
@@ -189,7 +223,9 @@ export function ServiceCards() {
                 >
                   {service.icon}
                 </motion.div>
-                <h3 className="mb-2 text-xl font-bold text-oxford-100">{service.title}</h3>
+                <h3 className="mb-2 text-xl font-bold text-oxford-100">
+                  {service.title}
+                </h3>
               </div>
             </div>
 
@@ -201,7 +237,9 @@ export function ServiceCards() {
                 href={service.url || "#"}
                 className="mt-4 flex items-center text-oxford-200 hover:text-white transition-colors group/link"
               >
-                <span className="text-sm mr-2">{t("serviceCards.viewMore")}</span>
+                <span className="text-sm mr-2">
+                  {t("serviceCards.viewMore")}
+                </span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
               </Link>
             </div>
@@ -209,5 +247,5 @@ export function ServiceCards() {
         </motion.div>
       ))}
     </div>
-  )
+  );
 }
