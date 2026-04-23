@@ -1,13 +1,26 @@
-"use client"
+"use client";
 
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
-import { useRef, useState, useEffect } from "react"
-import Image from "next/image"
-import { ServicesBackground } from "./services-background"
-import { Sun, Calendar, Users, ChevronLeft, ChevronRight, Zap, Grid } from "lucide-react"
-import { useInView } from "framer-motion"
-import { Badge } from "@/components/ui/badge"
-import { useI18n } from "@/lib/i18n-context"
+import {
+  motion,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
+import { ServicesBackground } from "./services-background";
+import {
+  Sun,
+  Calendar,
+  Users,
+  ChevronLeft,
+  ChevronRight,
+  Zap,
+  Grid,
+} from "lucide-react";
+import { useInView } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
+import { useI18n } from "@/lib/i18n-context";
 
 const projectImages = [
   {
@@ -30,12 +43,12 @@ const projectImages = [
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-03-05%20at%2010.21.49%20AM%20%281%29-BcKtXJZkIcNLMmEGFNfZu4Nt50VFJb.jpeg",
     alt: "Operador en maquinaria de hincado instalando soportes para el parque solar",
   },
-]
+];
 
 export function FeaturedProjectHeader() {
-  const { t } = useI18n()
-  const containerRef = useRef(null)
-  const isInView = useInView(containerRef, { margin: "-100px" })
+  const { t } = useI18n();
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { margin: "-100px" });
 
   return (
     <div ref={containerRef} className="mb-16">
@@ -54,13 +67,13 @@ export function FeaturedProjectHeader() {
               transition={{ delay: 0.2 }}
             >
               <Badge
-                className="relative bg-oxford-700/60 text-solar-200 backdrop-blur-sm border border-solar-500/30 
+                className="relative bg-oxford-700/60 text-green-200 backdrop-blur-sm border border-green-300/30 
                      px-4 py-1.5 text-sm font-medium"
               >
                 <span className="flex items-center gap-2">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-solar-400 opacity-75"></span>
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-solar-500"></span>
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-300 opacity-75"></span>
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-300"></span>
                   </span>
                   {t("featuredProject.inProgress")}
                 </span>
@@ -90,28 +103,30 @@ export function FeaturedProjectHeader() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.8 }}
             >
-              <p className="text-2xl md:text-3xl text-oxford-100">{t("featuredProject.solarPark")}</p>
+              <p className="text-2xl md:text-3xl text-oxford-100">
+                {t("featuredProject.solarPark")}
+              </p>
             </motion.div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export function FeaturedProject() {
-  const { t } = useI18n()
-  const containerRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(containerRef, { margin: "-100px" })
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const { t } = useI18n();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { margin: "-100px" });
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
-  })
+  });
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100])
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   const projectStats = [
     {
@@ -139,36 +154,42 @@ export function FeaturedProject() {
       value: "10,300",
       label: t("featuredProject.panels"),
     },
-  ]
+  ];
 
   // Auto play functionality
   useEffect(() => {
-    if (!isAutoPlaying) return
+    if (!isAutoPlaying) return;
 
     const nextSlide = () => {
-      setCurrentSlide((prev) => (prev + 1) % projectImages.length)
-    }
+      setCurrentSlide((prev) => (prev + 1) % projectImages.length);
+    };
 
     // Usar setTimeout en lugar de setInterval para mejor rendimiento
-    const timer = setTimeout(nextSlide, 8000)
+    const timer = setTimeout(nextSlide, 8000);
 
     return () => {
-      clearTimeout(timer)
-    }
-  }, [isAutoPlaying, currentSlide, projectImages.length])
+      clearTimeout(timer);
+    };
+  }, [isAutoPlaying, currentSlide, projectImages.length]);
 
   const handlePrevSlide = () => {
-    setIsAutoPlaying(false)
-    setCurrentSlide((prev) => (prev - 1 + projectImages.length) % projectImages.length)
-  }
+    setIsAutoPlaying(false);
+    setCurrentSlide(
+      (prev) => (prev - 1 + projectImages.length) % projectImages.length,
+    );
+  };
 
   const handleNextSlide = () => {
-    setIsAutoPlaying(false)
-    setCurrentSlide((prev) => (prev + 1) % projectImages.length)
-  }
+    setIsAutoPlaying(false);
+    setCurrentSlide((prev) => (prev + 1) % projectImages.length);
+  };
 
   return (
-    <section id="proyecto-destacado" ref={containerRef} className="relative overflow-hidden bg-oxford-800 py-24">
+    <section
+      id="proyecto-destacado"
+      ref={containerRef}
+      className="relative overflow-hidden bg-oxford-800 py-24"
+    >
       <div className="absolute inset-0">
         <ServicesBackground />
       </div>
@@ -198,7 +219,9 @@ export function FeaturedProject() {
                     className="absolute inset-0"
                   >
                     <Image
-                      src={projectImages[currentSlide].src || "/placeholder.svg"}
+                      src={
+                        projectImages[currentSlide].src || "/placeholder.svg"
+                      }
                       alt={projectImages[currentSlide].alt}
                       width={800}
                       height={600}
@@ -236,11 +259,13 @@ export function FeaturedProject() {
                     <button
                       key={index}
                       onClick={() => {
-                        setIsAutoPlaying(false)
-                        setCurrentSlide(index)
+                        setIsAutoPlaying(false);
+                        setCurrentSlide(index);
                       }}
                       className={`h-1.5 rounded-full transition-all duration-300 ${
-                        index === currentSlide ? "w-6 bg-white/90" : "w-1.5 bg-white/30 hover:bg-white/50"
+                        index === currentSlide
+                          ? "w-6 bg-white/90"
+                          : "w-1.5 bg-white/30 hover:bg-white/50"
                       }`}
                     />
                   ))}
@@ -251,7 +276,7 @@ export function FeaturedProject() {
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
               {projectStats.map((stat, index) => {
-                const Icon = stat.icon
+                const Icon = stat.icon;
                 return (
                   <motion.div
                     key={index}
@@ -265,12 +290,16 @@ export function FeaturedProject() {
                         <Icon className="w-4 h-4 text-oxford-100" />
                       </div>
                       <div>
-                        <div className="text-xl font-bold text-oxford-100">{stat.value}</div>
-                        <div className="text-sm text-oxford-300">{stat.label}</div>
+                        <div className="text-xl font-bold text-oxford-100">
+                          {stat.value}
+                        </div>
+                        <div className="text-sm text-oxford-300">
+                          {stat.label}
+                        </div>
                       </div>
                     </div>
                   </motion.div>
-                )
+                );
               })}
             </div>
           </motion.div>
@@ -287,8 +316,12 @@ export function FeaturedProject() {
               <div className="relative rounded-2xl bg-oxford-800/50 backdrop-blur-sm p-8 border border-oxford-600/30">
                 <div className="absolute -inset-px bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl [mask-image:radial-gradient(farthest-side_at_top,white,transparent)]" />
                 <div className="relative space-y-6">
-                  <h3 className="text-2xl font-bold text-oxford-100">{t("featuredProject.joinTitle")}</h3>
-                  <p className="text-oxford-300 leading-relaxed">{t("featuredProject.description")}</p>
+                  <h3 className="text-2xl font-bold text-oxford-100">
+                    {t("featuredProject.joinTitle")}
+                  </h3>
+                  <p className="text-oxford-300 leading-relaxed">
+                    {t("featuredProject.description")}
+                  </p>
                 </div>
               </div>
 
@@ -318,7 +351,10 @@ export function FeaturedProject() {
       </div>
 
       {/* Decorative Elements */}
-      <motion.div className="absolute inset-0 pointer-events-none" style={{ y }}>
+      <motion.div
+        className="absolute inset-0 pointer-events-none"
+        style={{ y }}
+      >
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
@@ -340,5 +376,5 @@ export function FeaturedProject() {
         ))}
       </motion.div>
     </section>
-  )
+  );
 }
