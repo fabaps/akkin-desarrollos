@@ -58,11 +58,11 @@ const translations: TranslationsType = {
   },
   "services.finances.hero.title": {
     es: "Participatión en Proyectos",
-    en: "Participation in Projects",
+    en: "Participation in Solar",
   },
   "services.finances.hero.subtitle": {
     es: "Solares",
-    en: "Solar",
+    en: "Projects",
   },
   "services.finances.hero.description": {
     es: "Te ayudamos a entender el aspecto financiero de tu proyecto solar:",
