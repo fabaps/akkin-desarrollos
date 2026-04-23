@@ -95,7 +95,7 @@ export function FinanzasHero() {
           >
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src="/images/finances.png"
+                src="/images/finances-image.jpg"
                 alt="Finanzas Solares"
                 width={800}
                 height={600}

@@ -158,7 +158,7 @@ export function ServiceCards() {
       title: t("services.finances"),
       description: t("services.finances.description"),
       icon: <TrendingUp className="h-6 w-6 text-white" />,
-      image: "/images/finances.png",
+      image: "/images/finances-image.jpg",
       details: [
         {
           title: "Análisis de Inversión",
@@ -173,7 +173,7 @@ export function ServiceCards() {
           description:
             "Te conectamos con opciones de financiamiento y bonos fiscales disponibles para proyectos de energía renovable.",
           icon: <PiggyBank className="h-5 w-5 text-white" />,
-          image: "/images/finances.png",
+          image: "/images/finances-image.jpg",
         },
       ],
       url: "/servicios/finanzas-solares",
