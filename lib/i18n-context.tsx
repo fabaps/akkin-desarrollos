@@ -84,57 +84,69 @@ const translations: TranslationsType = {
     es: "Proyecciones de ahorro a largo plazo",
     en: "Long-term savings projections",
   },
+"services.finances.hero.title": {
+    es: "Participación",
+    en: "Participation",
+  },
+  "services.finances.hero.subtitle": {
+    es: "en Proyectos",
+    en: "in Projects",
+  },
+"services.finances.hero.title": {
+    es: "Participación",
+    en: "Participation",
+  },
+  "services.finances.hero.subtitle": {
+    es: "en Proyectos",
+    en: "in Projects",
+  },
+  "services.finances.hero.description": {
+    es: "Invertimos y participamos activamente en proyectos solares, aportando capital y experiencia para impulsar su desarrollo y rentabilidad.",
+    en: "We actively invest in solar projects, providing capital and experience to drive their development and profitability.",
+  },
   "services.finances.hero.cta": {
     es: "Contáctanos",
     en: "Contact us",
   },
-  "services.finances.content.title1": {
-    es: "Análisis",
-    en: "Analysis",
+  "services.finances.content.title": {
+    es: "¿Qué incluye?",
+    en: "What does it include?",
   },
-  "services.finances.content.title2": {
-    es: "Financiero",
-    en: "Financial",
+  "services.finances.content.item1": {
+    es: "Evaluación técnica y financiera",
+    en: "Technical and financial evaluation",
   },
-  "services.finances.content.subtitle": {
-    es: "Evaluamos la viabilidad económica de tu proyecto solar",
-    en: "We evaluate the economic viability of your solar project",
+  "services.finances.hero.cta": {
+    es: "Contáctanos",
+    en: "Contact us",
   },
-  "services.finances.content.step1.title": {
-    es: "Análisis de Inversión",
-    en: "Investment Analysis",
+  "services.finances.content.title": {
+    es: "¿Qué incluye?",
+    en: "What does it include?",
   },
-  "services.finances.content.step1.description": {
-    es: "Realizamos un análisis detallado de retorno de inversión (ROI) y proyecciones financieras para tu proyecto solar.",
-    en: "We perform a detailed return on investment (ROI) analysis and financial projections for your solar project.",
+  "services.finances.content.item1": {
+    es: "Evaluación técnica y financiera",
+    en: "Technical and financial evaluation",
   },
-  "services.finances.content.step2.title": {
-    es: "Opciones de Financiamiento",
-    en: "Financing Options",
+  "services.finances.content.item2": {
+    es: "Inversión de capital",
+    en: "Capital investment",
   },
-  "services.finances.content.step2.description": {
-    es: "Te conectamos con instituciones financieras y opciones de leasing adaptadas a proyectos de energía renovable.",
-    en: "We connect you with financial institutions and leasing options tailored to renewable energy projects.",
+  "services.finances.content.item3": {
+    es: "Acompañamiento estratégico",
+    en: "Strategic accompaniment",
   },
-  "services.finances.content.step3.title": {
-    es: "Beneficios Fiscales",
-    en: "Tax Benefits",
+  "services.finances.content.item4": {
+    es: "Desarrollo y optimización del proyecto",
+    en: "Project development and optimization",
   },
-  "services.finances.content.step3.description": {
-    es: "Identificamos y gestionamos los bonos fiscales y exenciones de impuestos disponibles para proyectos de energía limpia.",
-    en: "We identify and manage tax credits and exemptions available for clean energy projects.",
-  },
-  "services.finances.content.step4.title": {
-    es: "Proyección de Ahorro",
-    en: "Savings Projection",
-  },
-  "services.finances.content.step4.description": {
-    es: "Calculamos el ahorro a largo plazo en facturas eléctricas y beneficios ambientales.",
-    en: "We calculate long-term savings on electric bills and environmental benefits.",
+  "services.finances.content.aliance": {
+    es: "Alianzas con socios clave",
+    en: "Alliances with key partners",
   },
   "services.finances.cta.title": {
-    es: "¿Listo para iniciar su proyecto solar?",
-    en: "Ready to start your solar project?",
+    es: "¿Listo para impulsar tu proyecto solar?",
+    en: "Ready to boost your solar project?",
   },
   "services.finances.cta.button": {
     es: "Contáctanos",

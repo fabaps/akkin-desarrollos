@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { TrendingUp, ArrowRight } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n-context";
@@ -43,42 +43,18 @@ export function FinanzasHero() {
                     {t("services.finances.hero.subtitle")}
                   </span>
                 </h1>
-                <div className="space-y-2">
-                  <p className="text-xl text-oxford-300">
-                    {t("services.finances.hero.description")}
-                  </p>
-                  <ul className="space-y-2 text-lg text-oxford-300">
-                    <li className="flex items-start gap-2">
-                      <span className="block w-1.5 h-1.5 rounded-full bg-solar-500 mt-2.5 flex-shrink-0" />
-                      <span>{t("services.finances.hero.item1")}</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="block w-1.5 h-1.5 rounded-full bg-solar-500 mt-2.5 flex-shrink-0" />
-                      <span>{t("services.finances.hero.item2")}</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="block w-1.5 h-1.5 rounded-full bg-solar-500 mt-2.5 flex-shrink-0" />
-                      <span>{t("services.finances.hero.item3")}</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="block w-1.5 h-1.5 rounded-full bg-solar-500 mt-2.5 flex-shrink-0" />
-                      <span>{t("services.finances.hero.item4")}</span>
-                    </li>
-                  </ul>
-                </div>
+                <p className="text-xl text-oxford-300 max-w-lg">
+                  {t("services.finances.hero.description")}
+                </p>
                 <div className="pt-4">
                   <Link
                     href="/contacto"
                     className="inline-flex group relative px-6 py-3 bg-gradient-to-r from-solar-500/10 to-solar-600/10 backdrop-blur-sm rounded-full overflow-hidden 
                            border border-solar-400/20 hover:border-solar-400/40 transition-all duration-300"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-solar-500/20 to-solar-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="relative flex items-center justify-center space-x-2 text-solar-100 group-hover:text-white">
-                      <span className="text-sm font-medium">
-                        {t("services.finances.hero.cta")}
-                      </span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
+                    <span className="relative text-solar-100 group-hover:text-white text-sm font-medium">
+                      {t("services.finances.hero.cta")}
+                    </span>
                   </Link>
                 </div>
               </div>
@@ -96,14 +72,13 @@ export function FinanzasHero() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
                 src="/images/finances-image.jpg"
-                alt="Finanzas Solares"
+                alt="Participación en Proyectos"
                 width={800}
                 height={600}
                 className="object-cover w-full h-full"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-oxford-900/80 via-oxford-900/30 to-transparent" />
             </div>
-
             <div className="absolute -inset-px bg-gradient-to-r from-oxford-400/20 to-oxford-300/20 rounded-2xl blur-xl opacity-50 -z-10" />
           </motion.div>
         </div>
@@ -117,10 +92,7 @@ export function FinanzasHero() {
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,
           }}
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.3, 0.6, 0.3],
-          }}
+          animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
           transition={{
             duration: 3 + Math.random() * 2,
             repeat: Number.POSITIVE_INFINITY,
