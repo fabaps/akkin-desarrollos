@@ -34,7 +34,7 @@ const proyectosFuturos = [
     nombre: "Parque Solar Ohmia 1",
     ubicacion: "Jutiapa, Jutiapa",
     state: "Permisologia",
-    fechaInicio: "2026",
+    fechaInicio: "2027",
     descripcion:
       "Proyecto de energía solar fotovoltaica con capacidad de 6.5MW.",
     imagen: "/images/ohmia-project.png",
@@ -44,7 +44,7 @@ const proyectosFuturos = [
     nombre: "Parque Solar Ohmia 2",
     ubicacion: "Jutiapa, Jutiapa",
     state: "Permisologia",
-    fechaInicio: "2026",
+    fechaInicio: "2027",
     descripcion:
       "Proyecto de energía solar fotovoltaica con capacidad de 3.5MW.",
     imagen: "/images/ohmia-project.png",
@@ -54,7 +54,7 @@ const proyectosFuturos = [
     nombre: "Parque Solar Amperia",
     ubicacion: "Pasaco, Jutiapa",
     state: "Permisologia",
-    fechaInicio: "2026",
+    fechaInicio: "2027",
     descripcion:
       "Proyecto de energía solar fotovoltaica con capacidad de 30MW.",
     imagen: "/images/amperia-project.png",
@@ -148,7 +148,7 @@ export function ProximosProyectos() {
                     <Calendar className="w-3.5 h-3.5 mr-1" />
                     {proyecto.fechaInicio}
                   </Badge>
-                  <Badge className="lg:hidden bg-solar-500/80 text-white backdrop-blur-sm border-none px-3 py-1">
+                  <Badge className="lg:hidden bg-green-300/70 text-white backdrop-blur-sm border-none px-3 py-1">
                     {proyecto.state}
                   </Badge>
                 </div>
