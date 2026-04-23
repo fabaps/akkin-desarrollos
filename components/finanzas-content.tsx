@@ -3,7 +3,13 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { Settings, Handshake, TrendingUp, BarChart3 } from "lucide-react";
+import {
+  Settings,
+  Handshake,
+  TrendingUp,
+  BarChart3,
+  Users,
+} from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
 
 export function FinanzasContent() {
@@ -27,6 +33,10 @@ export function FinanzasContent() {
     {
       title: t("services.finances.content.item4"),
       icon: <Settings className="h-5 w-5 text-solar-500" />,
+    },
+    {
+      title: t("services.finances.content.aliance"),
+      icon: <Users className="h-5 w-5 text-solar-500" />,
     },
   ];
 
