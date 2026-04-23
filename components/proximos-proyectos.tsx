@@ -1,31 +1,77 @@
-"use client"
+"use client";
 
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
-import Image from "next/image"
-import { Calendar, MapPin } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { ServicesBackground } from "./services-background"
-import { useI18n } from "@/lib/i18n-context"
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import Image from "next/image";
+import { Calendar, MapPin } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { ServicesBackground } from "./services-background";
+import { useI18n } from "@/lib/i18n-context";
 
 const proyectosFuturos = [
   {
     id: 1,
-    nombre: "Parqueo Solar Lumina",
+    nombre: "Parque Solar Lumina",
     ubicacion: "Villa Canales, Guatemala",
-    fechaInicio: "2025",
-    descripcion: "Proyecto de energía solar fotovoltaica con capacidad de 6MW.",
+    state: "En ejecución",
+    fechaInicio: "2026",
+    descripcion:
+      "Proyecto de energía solar fotovoltaica con capacidad de 4.8MW.",
     imagen: "/images/lumina-project.png",
   },
-]
+  {
+    id: 2,
+    nombre: "Parque Solar Voltia",
+    ubicacion: "San Marcos, Los Límones, Guatemala",
+    state: "Levantamiento de capital",
+    fechaInicio: "2026",
+    descripcion:
+      "Proyecto de energía solar fotovoltaica con capacidad de 7.5MW.",
+    imagen: "/images/voltia-project.png",
+  },
+  {
+    id: 3,
+    nombre: "Parque Solar Ohmia 1",
+    ubicacion: "Jutiapa, Jutiapa",
+    state: "Permisologia",
+    fechaInicio: "2026",
+    descripcion:
+      "Proyecto de energía solar fotovoltaica con capacidad de 6.5MW.",
+    imagen: "/images/ohmia-project.png",
+  },
+  {
+    id: 4,
+    nombre: "Parque Solar Ohmia 2",
+    ubicacion: "Jutiapa, Jutiapa",
+    state: "Permisologia",
+    fechaInicio: "2026",
+    descripcion:
+      "Proyecto de energía solar fotovoltaica con capacidad de 3.5MW.",
+    imagen: "/images/ohmia-project.png",
+  },
+  {
+    id: 5,
+    nombre: "Parque Solar Amperia",
+    ubicacion: "Pasaco, Jutiapa",
+    state: "Permisologia",
+    fechaInicio: "2026",
+    descripcion:
+      "Proyecto de energía solar fotovoltaica con capacidad de 30MW.",
+    imagen: "/images/amperia-project.png",
+  },
+];
 
 export function ProximosProyectos() {
-  const { t } = useI18n()
-  const containerRef = useRef(null)
-  const isInView = useInView(containerRef, { margin: "-100px" })
+  const { t } = useI18n();
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { margin: "-100px" });
 
   return (
-    <section id="proximos-proyectos" ref={containerRef} className="relative py-24 overflow-hidden scroll-mt-16">
+    <section
+      id="proximos-proyectos"
+      ref={containerRef}
+      className="relative py-24 overflow-hidden scroll-mt-16"
+    >
       {/* Background */}
       <div className="absolute inset-0">
         <ServicesBackground />
@@ -45,7 +91,9 @@ export function ProximosProyectos() {
               <motion.h2
                 className="text-4xl md:text-5xl font-bold tracking-tighter text-oxford-50"
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
                 transition={{ delay: 0.2 }}
               >
                 {t("upcomingProjects.title")}
@@ -53,7 +101,9 @@ export function ProximosProyectos() {
               <motion.span
                 className="block text-4xl md:text-5xl font-bold tracking-tighter bg-gradient-to-r from-oxford-200 to-oxford-300 text-transparent bg-clip-text"
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
                 transition={{ delay: 0.4 }}
               >
                 {t("upcomingProjects.subtitle")}
@@ -61,7 +111,9 @@ export function ProximosProyectos() {
               <motion.p
                 className="text-xl md:text-2xl text-oxford-300 max-w-2xl"
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
                 transition={{ delay: 0.6 }}
               >
                 {t("upcomingProjects.description")}
@@ -91,16 +143,28 @@ export function ProximosProyectos() {
                 <div className="absolute inset-0 bg-gradient-to-t from-oxford-900/90 via-oxford-900/50 to-transparent" />
 
                 {/* Badge de fecha */}
-                <div className="absolute top-4 right-4">
+                <div className="absolute top-4 right-4 flex flex-row gap-2">
                   <Badge className="bg-solar-500/80 text-white backdrop-blur-sm border-none px-3 py-1">
                     <Calendar className="w-3.5 h-3.5 mr-1" />
                     {proyecto.fechaInicio}
+                  </Badge>
+                  <Badge className="lg:hidden bg-solar-500/80 text-white backdrop-blur-sm border-none px-3 py-1">
+                    {proyecto.state}
+                  </Badge>
+                </div>
+
+                {/* State of project */}
+                <div className="absolute bottom-4 right-4 flex flex-row gap-2">
+                  <Badge className="hidden lg:flex bg-green-300/70 text-white backdrop-blur-sm border-none px-3 py-1">
+                    {proyecto.state}
                   </Badge>
                 </div>
 
                 {/* Título superpuesto */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-2xl font-bold text-white mb-1">{proyecto.nombre}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-1">
+                    {proyecto.nombre}
+                  </h3>
                   <div className="flex items-center text-oxford-200 text-sm">
                     <MapPin className="w-3.5 h-3.5 mr-1" />
                     <span>{proyecto.ubicacion}</span>
@@ -140,5 +204,5 @@ export function ProximosProyectos() {
         />
       ))}
     </section>
-  )
+  );
 }
