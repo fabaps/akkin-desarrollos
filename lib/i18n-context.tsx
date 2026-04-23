@@ -65,7 +65,7 @@ const translations: TranslationsType = {
     en: "Solar",
   },
   "services.finances.hero.description": {
-    es: "Te ayudamos a entender elaspecto financiero de tu proyecto solar:",
+    es: "Te ayudamos a entender el aspecto financiero de tu proyecto solar:",
     en: "We help you understand the financial aspect of your solar project:",
   },
   "services.finances.hero.item1": {
