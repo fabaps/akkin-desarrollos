@@ -49,8 +49,8 @@ const translations: TranslationsType = {
     en: "License Management",
   },
   "services.finances": {
-    es: "Finanzas Solares",
-    en: "Solar Finance",
+    es: "Finanzas",
+    en: "Finances",
   },
   "services.finances.description": {
     es: "Invertimos y participamos activamente en proyectos solares, aportando capital y know-how",
@@ -235,8 +235,8 @@ const translations: TranslationsType = {
     en: "Complete certification and authorization process for interconnection.",
   },
   "serviceCards.finances": {
-    es: "Finanzas Solares",
-    en: "Solar Finance",
+    es: "Finanzas",
+    en: "Finances",
   },
   "serviceCards.finances.description": {
     es: "Invertimos y participamos activamente en proyectos solares, aportando capital y know-how",
