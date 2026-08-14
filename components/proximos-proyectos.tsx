@@ -52,7 +52,6 @@ const proyectosFuturos = [
   {
     id: 5,
     nombre: "Parque Solar Amperia",
-    ubicacion: "Pasaco, Jutiapa",
     state: "Permisologia",
     fechaInicio: "2027",
     descripcion:
@@ -165,10 +164,12 @@ export function ProximosProyectos() {
                   <h3 className="text-2xl font-bold text-white mb-1">
                     {proyecto.nombre}
                   </h3>
-                  <div className="flex items-center text-oxford-200 text-sm">
-                    <MapPin className="w-3.5 h-3.5 mr-1" />
-                    <span>{proyecto.ubicacion}</span>
-                  </div>
+                  {proyecto.ubicacion && (
+                    <div className="flex items-center text-oxford-200 text-sm">
+                      <MapPin className="w-3.5 h-3.5 mr-1" />
+                      <span>{proyecto.ubicacion}</span>
+                    </div>
+                  )}
                 </div>
               </div>
 
