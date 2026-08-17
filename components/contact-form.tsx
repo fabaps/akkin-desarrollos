@@ -1,12 +1,19 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Facebook, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react"
-import Image from "next/image"
-import { useI18n } from "@/lib/i18n-context"
+import { motion } from "framer-motion";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  MapPin,
+  Phone,
+  Mail,
+} from "lucide-react";
+import Image from "next/image";
+import { useI18n } from "@/lib/i18n-context";
 
 export function ContactForm() {
-  const { t } = useI18n()
+  const { t } = useI18n();
 
   return (
     <div>
@@ -64,7 +71,9 @@ export function ContactForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Información de contacto */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-oxford-100">Información de contacto</h3>
+              <h3 className="text-2xl font-bold text-oxford-100">
+                Información de contacto
+              </h3>
 
               {/* Dirección */}
               <div className="flex items-start space-x-3">
@@ -93,8 +102,11 @@ export function ContactForm() {
               {/* Teléfono */}
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-solar-400" />
-                <a href="tel:30916027" className="text-oxford-300 hover:text-oxford-100 transition-colors">
-                  3091 6027
+                <a
+                  href="tel:32901550"
+                  className="text-oxford-300 hover:text-oxford-100 transition-colors"
+                >
+                  3290 1550
                 </a>
               </div>
 
@@ -112,7 +124,9 @@ export function ContactForm() {
 
             {/* Redes sociales */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-oxford-100">Síguenos en redes</h3>
+              <h3 className="text-2xl font-bold text-oxford-100">
+                Síguenos en redes
+              </h3>
 
               <div className="flex flex-wrap gap-4">
                 <motion.a
@@ -164,8 +178,10 @@ export function ContactForm() {
               </div>
 
               <p className="text-oxford-300 mt-6">
-                Estamos disponibles para atender tus consultas y brindarte información sobre nuestros servicios de
-                energía solar. Contáctanos por cualquiera de estos medios y te responderemos a la brevedad.
+                Estamos disponibles para atender tus consultas y brindarte
+                información sobre nuestros servicios de energía solar.
+                Contáctanos por cualquiera de estos medios y te responderemos a
+                la brevedad.
               </p>
             </div>
           </div>
@@ -193,5 +209,5 @@ export function ContactForm() {
         />
       ))}
     </div>
-  )
+  );
 }

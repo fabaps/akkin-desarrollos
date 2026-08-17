@@ -59,7 +59,7 @@ export function FeaturedProjectHeader() {
           animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
           transition={{ duration: 0.5 }}
         />
-        <div className="relative space-y-8 pl-4">
+        <div className="relative space-y-4 pl-4">
           <div className="relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ export function FeaturedProjectHeader() {
               >
                 <span className="flex items-center gap-2">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-300 opacity-75"></span>
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75"></span>
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-green-300"></span>
                   </span>
                   {t("featuredProject.inProgress")}
@@ -272,7 +272,15 @@ export function FeaturedProject() {
                 </div>
               </div>
             </div>
+          </motion.div>
 
+          {/* Right Column - Content */}
+          <motion.div
+            className="relative flex items-start justify-start min-h-full h-full max-h-full"
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.8 }}
+          >
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
               {projectStats.map((stat, index) => {
@@ -301,50 +309,6 @@ export function FeaturedProject() {
                   </motion.div>
                 );
               })}
-            </div>
-          </motion.div>
-
-          {/* Right Column - Content */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="space-y-8">
-              {/* Project Description */}
-              <div className="relative rounded-2xl bg-oxford-800/50 backdrop-blur-sm p-8 border border-oxford-600/30">
-                <div className="absolute -inset-px bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl [mask-image:radial-gradient(farthest-side_at_top,white,transparent)]" />
-                <div className="relative space-y-6">
-                  <h3 className="text-2xl font-bold text-oxford-100">
-                    {t("featuredProject.joinTitle")}
-                  </h3>
-                  <p className="text-oxford-300 leading-relaxed">
-                    {t("featuredProject.description")}
-                  </p>
-                </div>
-              </div>
-
-              {/* Key Benefits */}
-              <div className="space-y-4">
-                {[
-                  t("featuredProject.benefit1"),
-                  t("featuredProject.benefit2"),
-                  t("featuredProject.benefit3"),
-                  t("featuredProject.benefit4"),
-                ].map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-center gap-3"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <div className="w-2 h-2 rounded-full bg-oxford-400" />
-                    <span className="text-oxford-200">{benefit}</span>
-                  </motion.div>
-                ))}
-              </div>
             </div>
           </motion.div>
         </div>

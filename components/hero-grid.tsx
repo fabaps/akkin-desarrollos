@@ -1,36 +1,36 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { motion, useTransform, useMotionValue, useSpring } from "framer-motion"
-import { useRef } from "react"
-import { useInView } from "framer-motion"
-import { CheckCircle } from "lucide-react"
-import { ServicesBackground } from "@/components/services-background"
-import { useI18n } from "@/lib/i18n-context"
+import type React from "react";
+import { motion, useTransform, useMotionValue, useSpring } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
+import { CheckCircle } from "lucide-react";
+import { ServicesBackground } from "@/components/services-background";
+import { useI18n } from "@/lib/i18n-context";
 
 export function HeroGrid() {
-  const { t } = useI18n()
-  const containerRef = useRef(null)
-  const isInView = useInView(containerRef, { margin: "-100px" })
+  const { t } = useI18n();
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { margin: "-100px" });
 
   // Mouse tracking setup
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   // Smooth mouse movement
-  const smoothX = useSpring(mouseX, { damping: 50, stiffness: 400 })
-  const smoothY = useSpring(mouseY, { damping: 50, stiffness: 400 })
+  const smoothX = useSpring(mouseX, { damping: 50, stiffness: 400 });
+  const smoothY = useSpring(mouseY, { damping: 50, stiffness: 400 });
 
   const handleMouseMove = (event: React.MouseEvent) => {
-    const { currentTarget, clientX, clientY } = event
-    const { left, top } = currentTarget.getBoundingClientRect()
-    mouseX.set(clientX - left)
-    mouseY.set(clientY - top)
-  }
+    const { currentTarget, clientX, clientY } = event;
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  };
 
   // Parallax effect for background
-  const xBg = useTransform(smoothX, [0, 1000], [100, -100])
-  const yBg = useTransform(smoothY, [0, 1000], [100, -100])
+  const xBg = useTransform(smoothX, [0, 1000], [100, -100]);
+  const yBg = useTransform(smoothY, [0, 1000], [100, -100]);
 
   return (
     <div
@@ -145,8 +145,8 @@ export function HeroGrid() {
                   allowFullScreen
                   loading="lazy"
                   onClick={(e) => {
-                    window.open("https://youtu.be/kF74SgusZu4", "_blank")
-                    e.preventDefault()
+                    window.open("https://youtu.be/kF74SgusZu4", "_blank");
+                    e.preventDefault();
                   }}
                 ></iframe>
 
@@ -211,24 +211,28 @@ export function HeroGrid() {
               <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
                 {/* Título de normativos */}
                 <div className="md:w-1/3">
-                  <h2 className="text-xl font-bold text-oxford-100 mb-2 md:mb-3">{t("certifications.title")}</h2>
+                  <h2 className="text-xl font-bold text-oxford-100 mb-2 md:mb-3">
+                    {t("certifications.title")}
+                  </h2>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="h-5 w-5 text-solar-500 mt-1 flex-shrink-0" />
-                    <p className="text-oxford-200">{t("certifications.description")}</p>
+                    <p className="text-oxford-200">
+                      {t("certifications.description")}
+                    </p>
                   </div>
                 </div>
 
                 {/* Certificaciones */}
                 <div className="md:w-2/3">
-                  <p className="text-oxford-300 mb-3 md:mb-4 text-sm">{t("certifications.label")}</p>
+                  <p className="text-oxford-300 mb-3 md:mb-4 text-sm">
+                    {t("certifications.label")}
+                  </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div className="flex items-start space-x-3">
                       <CheckCircle className="h-4 w-4 text-solar-500 mt-0.5 flex-shrink-0" />
-                      <p className="text-oxford-300 text-sm">{t("certifications.item1")}</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <CheckCircle className="h-4 w-4 text-solar-500 mt-0.5 flex-shrink-0" />
-                      <p className="text-oxford-300 text-sm">{t("certifications.item2")}</p>
+                      <p className="text-oxford-300 text-sm">
+                        {t("certifications.item1")}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -241,5 +245,5 @@ export function HeroGrid() {
       {/* Decorative elements */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-oxford-800 to-transparent" />
     </div>
-  )
+  );
 }

@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { motion } from "framer-motion"
-import { Linkedin, Mail, MapPin, Phone } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import Link from "next/link"
-import { useI18n } from "@/lib/i18n-context"
+import { motion } from "framer-motion";
+import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import { useI18n } from "@/lib/i18n-context";
 
 export function SiteFooter() {
-  const { t } = useI18n()
+  const { t } = useI18n();
 
   return (
     <footer className="relative overflow-hidden">
@@ -29,7 +29,8 @@ export function SiteFooter() {
             ease: "linear",
           }}
           style={{
-            background: "radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%)",
+            background:
+              "radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -49,7 +50,9 @@ export function SiteFooter() {
               />
               <h3 className="text-2xl font-bold text-oxford-100">AKKIN</h3>
             </div>
-            <p className="text-oxford-300 leading-relaxed">{t("footer.description")}</p>
+            <p className="text-oxford-300 leading-relaxed">
+              {t("footer.description")}
+            </p>
             <div className="flex items-center space-x-4">
               <motion.a
                 href="https://wa.link/ajdda4"
@@ -82,7 +85,9 @@ export function SiteFooter() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-oxford-100 mb-6">{t("footer.quickLinks")}</h4>
+            <h4 className="text-lg font-semibold text-oxford-100 mb-6">
+              {t("footer.quickLinks")}
+            </h4>
             <ul className="space-y-4">
               {[
                 { text: t("nav.services"), href: "#servicios" },
@@ -90,21 +95,28 @@ export function SiteFooter() {
                   text: "Proyecto Destacado",
                   href: "#proyecto-destacado",
                   onClick: (e: React.MouseEvent) => {
-                    e.preventDefault()
-                    const section = document.getElementById("proyecto-destacado")
+                    e.preventDefault();
+                    const section =
+                      document.getElementById("proyecto-destacado");
                     if (section) {
-                      const headerOffset = 64
-                      const elementPosition = section.getBoundingClientRect().top
-                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+                      const headerOffset = 64;
+                      const elementPosition =
+                        section.getBoundingClientRect().top;
+                      const offsetPosition =
+                        elementPosition + window.pageYOffset - headerOffset;
                       window.scrollTo({
                         top: offsetPosition,
                         behavior: "smooth",
-                      })
+                      });
                     }
                   },
                 },
               ].map((link, index) => (
-                <motion.li key={index} whileHover={{ x: 5 }} className="transform transition-transform duration-200">
+                <motion.li
+                  key={index}
+                  whileHover={{ x: 5 }}
+                  className="transform transition-transform duration-200"
+                >
                   {link.isButton ? (
                     <Link href={link.href}>
                       <Button
@@ -132,9 +144,14 @@ export function SiteFooter() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold text-oxford-100 mb-6">{t("footer.contact")}</h4>
+            <h4 className="text-lg font-semibold text-oxford-100 mb-6">
+              {t("footer.contact")}
+            </h4>
             <ul className="space-y-4">
-              <motion.li whileHover={{ x: 5 }} className="flex items-start space-x-3">
+              <motion.li
+                whileHover={{ x: 5 }}
+                className="flex items-start space-x-3"
+              >
                 <MapPin className="h-5 w-5 text-oxford-300 mt-1 flex-shrink-0" />
                 <a
                   href="https://maps.google.com/?q=Ruta+4+5-58,+Ciudad+de+Guatemala"
@@ -147,13 +164,22 @@ export function SiteFooter() {
                   Cdad. de Guatemala
                 </a>
               </motion.li>
-              <motion.li whileHover={{ x: 5 }} className="flex items-center space-x-3">
+              <motion.li
+                whileHover={{ x: 5 }}
+                className="flex items-center space-x-3"
+              >
                 <Phone className="h-5 w-5 text-oxford-300 flex-shrink-0" />
-                <a href="tel:30916027" className="text-oxford-300 hover:text-oxford-100 transition-colors">
-                  3091 6027
+                <a
+                  href="tel:32901550"
+                  className="text-oxford-300 hover:text-oxford-100 transition-colors"
+                >
+                  3290 1550
                 </a>
               </motion.li>
-              <motion.li whileHover={{ x: 5 }} className="flex items-center space-x-3">
+              <motion.li
+                whileHover={{ x: 5 }}
+                className="flex items-center space-x-3"
+              >
                 <Mail className="h-5 w-5 text-oxford-300 flex-shrink-0" />
                 <a
                   href="mailto:admin@adepenlinea.com"
@@ -169,7 +195,9 @@ export function SiteFooter() {
                     border border-solar-400/50 hover:border-solar-400 transition-all duration-300"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-solar-600 to-solar-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <span className="relative text-white">{t("nav.contact")}</span>
+                    <span className="relative text-white">
+                      {t("nav.contact")}
+                    </span>
                   </Button>
                 </Link>
               </motion.li>
@@ -184,10 +212,16 @@ export function SiteFooter() {
               © {new Date().getFullYear()} AKKIN. {t("footer.rights")}
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-oxford-400 hover:text-oxford-300 text-sm">
+              <a
+                href="#"
+                className="text-oxford-400 hover:text-oxford-300 text-sm"
+              >
                 {t("footer.privacy")}
               </a>
-              <a href="#" className="text-oxford-400 hover:text-oxford-300 text-sm">
+              <a
+                href="#"
+                className="text-oxford-400 hover:text-oxford-300 text-sm"
+              >
                 {t("footer.terms")}
               </a>
             </div>
@@ -217,5 +251,5 @@ export function SiteFooter() {
         ))}
       </div>
     </footer>
-  )
+  );
 }

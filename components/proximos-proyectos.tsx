@@ -18,6 +18,7 @@ const proyectosFuturos = [
     descripcion:
       "Proyecto de energía solar fotovoltaica con capacidad de 4.8MW.",
     imagen: "/images/lumina-project.png",
+    isActive: true,
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const proyectosFuturos = [
     descripcion:
       "Proyecto de energía solar fotovoltaica con capacidad de 6.5MW.",
     imagen: "/images/voltia-project.png",
+    isActive: false,
   },
   {
     id: 3,
@@ -38,6 +40,7 @@ const proyectosFuturos = [
     descripcion:
       "Proyecto de energía solar fotovoltaica con capacidad de 6.5MW.",
     imagen: "/images/ohmia-project.png",
+    isActive: false,
   },
   {
     id: 4,
@@ -48,6 +51,7 @@ const proyectosFuturos = [
     descripcion:
       "Proyecto de energía solar fotovoltaica con capacidad de 3.5MW.",
     imagen: "/images/ohmia-project.png",
+    isActive: false,
   },
   {
     id: 5,
@@ -57,6 +61,7 @@ const proyectosFuturos = [
     descripcion:
       "Proyecto de energía solar fotovoltaica con capacidad de 30MW.",
     imagen: "/images/amperia-project.png",
+    isActive: false,
   },
 ];
 
@@ -140,6 +145,24 @@ export function ProximosProyectos() {
                   className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-oxford-900/90 via-oxford-900/50 to-transparent" />
+
+                {/* Badge de fecha */}
+                {proyecto.isActive && (
+                  <div className="absolute top-4 left-4 flex flex-row gap-2">
+                    <Badge
+                      className="relative bg-oxford-700/60 text-green-200 backdrop-blur-sm border border-green-300/30 
+                     px-4 py-1.5 text-sm font-medium"
+                    >
+                      <span className="flex items-center gap-2">
+                        <span className="relative flex h-2 w-2">
+                          <span className="absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75"></span>
+                          <span className="relative inline-flex h-2 w-2 rounded-full bg-green-300"></span>
+                        </span>
+                        {t("upcomingProjects.isActive")}
+                      </span>
+                    </Badge>
+                  </div>
+                )}
 
                 {/* Badge de fecha */}
                 <div className="absolute top-4 right-4 flex flex-row gap-2">

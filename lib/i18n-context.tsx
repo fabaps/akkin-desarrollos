@@ -27,8 +27,8 @@ const translations: TranslationsType = {
     en: "SERVICES",
   },
   "nav.projects": {
-    es: "GDRs 2025-2026",
-    en: "GDRs 2025-2026",
+    es: "GDRs 2026-2027",
+    en: "GDRs 2026-2027",
   },
   "nav.contact": {
     es: "CONTACTO",
@@ -84,7 +84,7 @@ const translations: TranslationsType = {
     es: "Proyecciones de ahorro a largo plazo",
     en: "Long-term savings projections",
   },
-"services.finances.hero.title": {
+  "services.finances.hero.title": {
     es: "Participación",
     en: "Participation",
   },
@@ -92,7 +92,7 @@ const translations: TranslationsType = {
     es: "en Proyectos",
     en: "in Projects",
   },
-"services.finances.hero.title": {
+  "services.finances.hero.title": {
     es: "Participación",
     en: "Participation",
   },
@@ -401,6 +401,10 @@ const translations: TranslationsType = {
   "upcomingProjects.description": {
     es: "Conoce nuestros futuros desarrollos de energía renovable",
     en: "Learn about our future renewable energy developments",
+  },
+  "upcomingProjects.isActive": {
+    es: "Activo",
+    en: "Active",
   },
 
   // Partners
